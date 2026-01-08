@@ -16,11 +16,11 @@ class DefaultArgs:
     bw_high = 256
     bw_step = 1
     pe_low = 128
-    pe_high = 300
+    pe_high = 256
     pe_step = 1
-    buffer_low = 32
-    buffer_high = 256
-    buffer_step = 8
+    buffer_low = 64
+    buffer_high = 1024
+    buffer_step = 64
     max_area = 4.3841e+09
     max_power = 1.34877e+05
     max_invalid = 2500
