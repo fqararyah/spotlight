@@ -145,6 +145,7 @@ class HWResults(Results):
             )
         )
 
+HEDA_PE_BUDGET = 1024
 
 def convert_point_to_maestro(args, hw_point, sw_point, num_levels):
     num_simd_lanes = hw_point.get('num_simd_lane')
@@ -208,6 +209,16 @@ def get_hw_point_feats(hw_point, num_levels, with_labels=False):
         return feats, feat_labels
     return feats
 
+def get_total_mac_units(hw_point, num_levels):
+    hw_feats, hw_feat_labels = get_hw_point_feats(hw_point, num_levels, with_labels=True)
+    total_pes = hw_feats[hw_feat_labels.index('hw_feat_total_pes')]
+    num_simd_lane = hw_feats[hw_feat_labels.index('hw_feat_num_simd_lane')]
+    
+    return total_pes * num_simd_lane
+
+def within_heda_budget(hw_point, num_levels):
+    return get_total_mac_units(hw_point, num_levels) <= HEDA_PE_BUDGET
+    
 def get_sw_point_feats(hw_point, sw_point, num_levels, excluded_feats, dataflow, with_labels=False):
     feats = list()
 

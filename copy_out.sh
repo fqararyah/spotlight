@@ -1,5 +1,7 @@
 
 IMAGE_NAME="spotlight"
 CONTAINER_ID=$(docker ps -a -q --filter "ancestor=$IMAGE_NAME" | head -n 1)
-
-docker cp $CONTAINER_ID:/Results/* ./outputs
+ 
+DIR_NAME="./outputs/$(date +'%y_%m_%d_%H')"
+mkdir $DIR_NAME
+docker cp $CONTAINER_ID:/home/results $DIR_NAME

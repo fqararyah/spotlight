@@ -16,7 +16,7 @@ class DefaultArgs:
     bw_low = 64
     bw_high = 256
     bw_step = 1
-    pe_low = 128
+    pe_low = 64
     pe_high = 256
     pe_step = 1
     buffer_low = 64

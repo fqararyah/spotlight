@@ -163,10 +163,6 @@ class Optimizer:
 
             hw_point = self.get_hw_point(hw_space, hw_results)
             hw_feats, self.hw_feat_labels = search_utils.get_hw_point_feats(hw_point, hw_space.num_levels, with_labels=True)
-            #using the same budget in our experiments
-            if hw_feats[self.hw_feat_labels.index('hw_feat_total_pes')] > options.HEDA_PE_BUDGET:
-                invalid_sample_count += 1
-                continue
             model_results = self.opt_sw(hw_space.num_levels, hw_point)
             success = not model_results is None
             self.increment_hw_opt(success)

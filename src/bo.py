@@ -54,8 +54,11 @@ def generate_hw_batch(hw_space, batch_size):
     hw_points = list()
     hw_feats = list()
     for _ in range(batch_size):
-        space_idx = np.random.randint(hw_space.size)
-        hw_point = hw_space.build_point(space_idx)
+        within_budget = False
+        while not within_budget:
+            space_idx = np.random.randint(hw_space.size)
+            hw_point = hw_space.build_point(space_idx)
+            within_budget = search_utils.within_heda_budget(hw_point, hw_space.num_levels)
         hw_feat = search_utils.get_hw_point_feats(hw_point, hw_space.num_levels)
         hw_points.append(hw_point)
         hw_feats.append(hw_feat)
