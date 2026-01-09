@@ -211,7 +211,7 @@ def get_shapes(layer_names, ignore_stride, ignore_type, remove_duplicates):
         'MNASNET_Conv2d-51': { 'K': 320, 'C': 1152, 'R': 1, 'S': 1, 'Y': 7, 'X': 7, 'Stride': { 'X': 1, 'Y': 1 } },
         'MNASNET_Conv2d-52': { 'K': 1280, 'C': 320, 'R': 1, 'S': 1, 'Y': 7, 'X': 7, 'Stride': { 'X': 1, 'Y': 1 } },
         'MNASNET_Linear-53': { 'K': 1000, 'C': 1280, 'R': 1, 'S': 1, 'Y': 1, 'X': 1 },
-
+        
         # Transformer Full
         'TRANSFORMER_MH_FC_DimReduce_VKQ_0': { 'N': 128, 'K': 1536, 'C': 1, 'R': 1, 'S': 512, 'Y': 1, 'X': 512, 'Stride': { 'X': 1, 'Y': 1 } },
         'TRANSFORMER_SD_MatMul_QK_00': { 'N': 1, 'K': 128, 'C': 1, 'R': 64, 'S': 1, 'Y': 64, 'X': 128, 'Stride': { 'X': 1, 'Y': 1 } },

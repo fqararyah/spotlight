@@ -1,6 +1,8 @@
-#!/bin/bash
+IMAGE_NAME="spotlight"
+CONTAINER_ID=$(docker ps -a -q --filter "ancestor=$IMAGE_NAME" | head -n 1)
 
-# Container and image names
-CONTAINER_ID=c2bf91d7fede
+# Start the container if it’s stopped
+docker start "$CONTAINER_ID"
 
-docker exec -it $CONTAINER_ID /bin/bash
+# Exec into it
+docker exec -it "$CONTAINER_ID" /bin/bash

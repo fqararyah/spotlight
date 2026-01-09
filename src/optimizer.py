@@ -14,6 +14,7 @@ import search_utils
 import sklearn.exceptions
 import sklearn.inspection as insp
 import scipy.stats as stats
+import options
 
 class Optimizer:
     def __init__(self, args, eval_f, shapes, n_hw, n_sw, out_file, compute_feats=True):
@@ -162,7 +163,8 @@ class Optimizer:
 
             hw_point = self.get_hw_point(hw_space, hw_results)
             hw_feats, self.hw_feat_labels = search_utils.get_hw_point_feats(hw_point, hw_space.num_levels, with_labels=True)
-            if hw_feats[self.hw_feat_labels.index('hw_feat_total_pes')] > 1024:
+            #using the same budget in our experiments
+            if hw_feats[self.hw_feat_labels.index('hw_feat_total_pes')] > options.HEDA_PE_BUDGET:
                 invalid_sample_count += 1
                 continue
             model_results = self.opt_sw(hw_space.num_levels, hw_point)

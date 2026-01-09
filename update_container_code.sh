@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Container and image names
-CONTAINER_NAME=gifted_wiles
-IMAGE_NAME=spotlight
+IMAGE_NAME="spotlight"
+CONTAINER_NAME=$(docker ps --filter "ancestor=$IMAGE_NAME" --format "{{.Names}}")
 
 # Container working directory
 APP_PATH=/home

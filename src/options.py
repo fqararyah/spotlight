@@ -1,6 +1,7 @@
 import argparse
 import math
 
+HEDA_PE_BUDGET = 1024
 class DefaultArgs:
     model = None
     output_dir = './'
@@ -107,7 +108,7 @@ def get_args():
     parser.add_argument("--dataflow", help="type of dataflow to use", type=str, default="searched")
 
     parser.add_argument("--layers", help="comma separated list of layers", type=str, default=DefaultArgs.layers)
-    parser.add_argument("--remove-duplicate-layers", dest="remove_duplicate_layers", help="ignore duplicate layers", default=False, action="store_true")
+    parser.add_argument("--remove-duplicate-layers", dest="remove_duplicate_layers", help="ignore duplicate layers", default=True, action="store_false")
     parser.add_argument("--ignore-stride", dest="ignore_stride", help="ignore stride in layer shapes", default=False, action="store_true")
 
     parser.add_argument("--exclude-feat", help="comma separated list of features to ignore", type=str, default=DefaultArgs.exclude_feat)
