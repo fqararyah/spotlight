@@ -17,7 +17,7 @@ def get_shapes(layer_names, ignore_stride, ignore_type, remove_duplicates):
         'efficientnet_late': { 'N': 1, 'K': 1280, 'C': 1, 'R': 1, 'S': 1, 'Y': 7, 'X': 7 },   # Conv1x1
 
         # Resnet-50 Full
-        'RESNET50_CONV1': { 'N': 1, 'K': 64, 'C': 3, 'R': 7, 'S': 7, 'Y': 224, 'X': 224, 'Stride': {'X': 2, 'Y': 2} },
+        'RESNET50_CONV1': { 'N': 1, 'K': 64, 'C': 3, 'R': 7, 'S': 7, 'Y': 230, 'X': 230, 'Stride': {'X': 2, 'Y': 2} },#added padding
         'RESNET50_CONV2_1_1': { 'N': 1, 'K': 64, 'C': 64, 'R': 1, 'S': 1, 'Y': 56, 'X': 56 },
         'RESNET50_CONV2_1_2': { 'N': 1, 'K': 64, 'C': 64, 'R': 3, 'S': 3, 'Y': 56, 'X': 56 },
         'RESNET50_CONV2_1_3': { 'N': 1, 'K': 256, 'C': 64, 'R': 1, 'S': 1, 'Y': 56, 'X': 56 },

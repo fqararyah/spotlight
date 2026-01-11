@@ -1,0 +1,66 @@
+C_1_FH_1_FW_512_IH_512_IW_1_NF_1536_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 0
+  edp: '1.0014e+13'
+  energy: '8.4742e+06'
+  delay: '1.1817e+06'
+  throughput: '8.5187e+01'
+  area: '1.0846e+07'
+  power: '1.664644e+03'
+  complete_performance_record_str: '>> 0 opt_layer target 1.0014e+13 edp 1.0014e+13
+    energy 8.4742e+06 delay 1.1817e+06 throughput 8.5187e+01 area 1.0846e+07 power
+    1.664644e+03'
+C_1_FH_64_FW_1_IH_128_IW_64_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 1
+  edp: '1.0141e+10'
+  energy: '1.4321e+05'
+  delay: '7.0813e+04'
+  throughput: '1.4808e+01'
+  area: '1.3644e+07'
+  power: '2.143667e+03'
+  complete_performance_record_str: '>> 1 opt_layer target 1.0141e+10 edp 1.0141e+10
+    energy 1.4321e+05 delay 7.0813e+04 throughput 1.4808e+01 area 1.3644e+07 power
+    2.143667e+03'
+C_1_FH_128_FW_1_IH_64_IW_128_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 2
+  edp: '1.0199e+12'
+  energy: '1.2508e+05'
+  delay: '8.1537e+06'
+  throughput: '1.2860e-01'
+  area: '5.3346e+07'
+  power: '7.420725e+02'
+  complete_performance_record_str: '>> 2 opt_layer target 1.0199e+12 edp 1.0199e+12
+    energy 1.2508e+05 delay 8.1537e+06 throughput 1.2860e-01 area 5.3346e+07 power
+    7.420725e+02'
+C_1_FH_1_FW_512_IH_512_IW_1_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 3
+  edp: '1.0029e+14'
+  energy: '2.8984e+06'
+  delay: '3.4603e+07'
+  throughput: '9.6968e-01'
+  area: '1.0792e+08'
+  power: '1.523664e+03'
+  complete_performance_record_str: '>> 3 opt_layer target 1.0029e+14 edp 1.0029e+14
+    energy 2.8984e+06 delay 3.4603e+07 throughput 9.6968e-01 area 1.0792e+08 power
+    1.523664e+03'
+C_1_FH_1_FW_512_IH_512_IW_1_NF_2048_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 4
+  edp: '1.0077e+16'
+  energy: '2.3997e+09'
+  delay: '4.1994e+06'
+  throughput: '8.2141e+03'
+  area: '5.6253e+07'
+  power: '2.084895e+05'
+  complete_performance_record_str: '>> 4 opt_layer target 1.0077e+16 edp 1.0077e+16
+    energy 2.3997e+09 delay 4.1994e+06 throughput 8.2141e+03 area 5.6253e+07 power
+    2.084895e+05'
+C_1_FH_1_FW_2048_IH_2048_IW_1_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 5
+  edp: '1.0194e+16'
+  energy: '2.6539e+08'
+  delay: '3.8412e+07'
+  throughput: '1.3977e+01'
+  area: '2.7453e+07'
+  power: '6.247796e+03'
+  complete_performance_record_str: '>> 5 opt_layer target 1.0194e+16 edp 1.0194e+16
+    energy 2.6539e+08 delay 3.8412e+07 throughput 1.3977e+01 area 2.7453e+07 power
+    6.247796e+03'
