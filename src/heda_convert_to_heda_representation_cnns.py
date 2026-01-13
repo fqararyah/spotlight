@@ -44,12 +44,13 @@ def convert_line(line):
 
     return "_".join(parts)
 
-
 def main():
+    cnns_list = ['RESNET', 'VGG16']
     path = os.path.join(os.path.dirname(__file__), '../outputs/unique_shapes/')
     for dirpath, _, files in os.walk(path):
+        is_cnn = any(cnn in dirpath for cnn in cnns_list)
         for fn in files:
-            if '.txt' not in fn:
+            if 'shapes' not in fn or '.txt' not in fn or not is_cnn:
                 continue         
             input_file = os.path.join(dirpath, fn)
             output_file = os.path.join(

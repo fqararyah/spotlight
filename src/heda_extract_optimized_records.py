@@ -102,7 +102,7 @@ def main():
     shapes_path = os.path.join(os.path.dirname(__file__), '../outputs/unique_shapes/')
     out_path_template = os.path.join(os.path.dirname(__file__), '../outputs/layers_perf_records/')
     metrics = ['EDP']
-    results_root_dir = '26_01_09_18'
+    results_root_dir = 'results'
     for metric in metrics:
         for dirpath, _, files in os.walk(shapes_path):
             for fn in files:
@@ -112,7 +112,7 @@ def main():
                 layer_reprs = read_layer_representations(input_file)
                 model_name = input_file.rsplit('/', 1)[0].rsplit('/', 1)[1]
                 raw_results_file = \
-                    os.path.join(os.path.dirname(__file__), '../outputs/{}/results/Edge/Spotlight/{}/{}/out.txt'.format(
+                    os.path.join(os.path.dirname(__file__), '../outputs/{}/Edge/Spotlight/{}/{}/out.txt'.format(
                         results_root_dir, metric, model_name))
                 results = read_results(raw_results_file)
                 best_edp = pick_best(results, "edp")
