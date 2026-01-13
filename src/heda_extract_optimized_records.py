@@ -106,7 +106,7 @@ def main():
     for metric in metrics:
         for dirpath, _, files in os.walk(shapes_path):
             for fn in files:
-                if '.out' not in fn:
+                if 'shapes.out' not in fn:
                     continue         
                 input_file = os.path.join(dirpath, fn)
                 layer_reprs = read_layer_representations(input_file)
@@ -114,6 +114,9 @@ def main():
                 raw_results_file = \
                     os.path.join(os.path.dirname(__file__), '../outputs/{}/Edge/Spotlight/{}/{}/out.txt'.format(
                         results_root_dir, metric, model_name))
+                if not os.path.exists(raw_results_file):
+                    print(raw_results_file, 'DNE!!!!!')
+                    continue
                 results = read_results(raw_results_file)
                 best_edp = pick_best(results, "edp")
                 best_energy = pick_best(results, "energy")

@@ -16,7 +16,7 @@ class DefaultArgs:
     bw_low = 64
     bw_high = 256
     bw_step = 1
-    pe_low = 64
+    pe_low = 128
     pe_high = 256
     pe_step = 1
     buffer_low = 64
@@ -49,8 +49,9 @@ def get_args():
     parser.add_argument("--output-dir", help="output directory", type=str, default=DefaultArgs.output_dir)
     parser.add_argument("--output-filename", help="output filename", type=str, default=DefaultArgs.output_filename)
     parser.add_argument("--output-to-file", help="output to file", default=False, action="store_true")
-    parser.add_argument("--dump-all", help="dump full cost dictionary", default=False, action="store_true")
-
+    #parser.add_argument("--dump-all", help="dump full cost dictionary", default=False, action="store_true")
+    parser.add_argument("--dump-all", help="dump full cost dictionary", default=True, action="store_false")
+    
     parser.add_argument("--simd-low", help="minimum number of SIMD lanes", type=int, default=DefaultArgs.simd_low)
     parser.add_argument("--simd-high", help="maxium number of SIMD lanes", type=int, default=DefaultArgs.simd_high)
     parser.add_argument("--simd-step", help="step size for SIMD lane values", type=int, default=DefaultArgs.simd_step)

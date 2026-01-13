@@ -189,13 +189,13 @@ run_single() {
 #SBATCH -n 1
 #SBATCH -t $runtime_limit
 
-python src/heda_store_unique_layers_shapes.py $real_progress_bar --model=$real_technique --trials=$trials --layers=$model --target=$real_target --hw-trials=$hw_trials --sw-trials=$sw_trials $real_scale --output-dir=$result_dir --output-filename=shapes.txt --output-to-file $extra_flags $@
+python3 src/heda_store_unique_layers_shapes.py $real_progress_bar --model=$real_technique --trials=$trials --layers=$model --target=$real_target --hw-trials=$hw_trials --sw-trials=$sw_trials $real_scale --output-dir=$result_dir --output-filename=shapes.txt --output-to-file $extra_flags $@
 EOM
 
         echo "$template" > scripts/$key.sh
         sbatch scripts/$key.sh
     else
-        python src/heda_store_unique_layers_shapes.py $real_progress_bar --model=$real_technique --trials=$trials --layers=$model --target=$real_target --hw-trials=$hw_trials --sw-trials=$sw_trials $real_scale --output-dir=$result_dir --output-filename=shapes.txt --output-to-file $extra_flags $@ > /dev/null
+        python3 src/heda_store_unique_layers_shapes.py $real_progress_bar --model=$real_technique --trials=$trials --layers=$model --target=$real_target --hw-trials=$hw_trials --sw-trials=$sw_trials $real_scale --output-dir=$result_dir --output-filename=shapes.txt --output-to-file $extra_flags $@ > /dev/null
     fi
 }
 

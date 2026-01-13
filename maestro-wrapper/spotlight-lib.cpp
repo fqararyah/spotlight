@@ -227,8 +227,58 @@ Cost<DumpAll> evaluateHelper(
   return best_cost;
 }
 
+// extern "C" __attribute__((visibility("default")))
+// char const * evaluateWithDump(
+//   uint64_t * shape,
+//   char const * layer_type,
+//   uint64_t num_pes,
+//   uint64_t num_simd_lanes,
+//   uint64_t bit_width,
+//   uint64_t bandwidth,
+//   uint64_t num_levels,
+//   uint64_t * buf_sizes,
+//   uint64_t * num_sub_clusters,
+//   char const * dataflow,
+//   uint64_t search_permutations,
+//   char const * logfile
+// )
+// {
+//   Cost<true> best_cost = evaluateHelper<true>(
+//     shape,
+//     std::string{layer_type},
+//     num_pes,
+//     num_simd_lanes,
+//     bit_width,
+//     bandwidth,
+//     num_levels,
+//     buf_sizes,
+//     num_sub_clusters,
+//     dataflow,
+//     search_permutations,
+//     std::string{logfile}
+//   );
+
+//   std::stringstream ret_ss;
+//   ret_ss << "{";
+//   if(best_cost.valid) {
+//     std::string prefix = "";
+//     for(auto const & node : best_cost.costs) {
+//       if(std::isfinite(node.second)) {
+//         ret_ss << prefix << '"' << MetricTypeToString(node.first) << "\": " << std::to_string(node.second);
+//         prefix = ", ";
+//       }
+//     }
+//   }
+//   ret_ss << "}";
+
+//   std::string ret_s = ret_ss.str();
+//   char * ret = new char[ret_s.size() + 1];
+//   std::memcpy(ret, ret_s.c_str(), ret_s.size() + 1);
+//   return ret;
+// }
+
 extern "C" __attribute__((visibility("default")))
-char const * evaluateWithDump(
+double * evaluateWithDump(
   uint64_t * shape,
   char const * layer_type,
   uint64_t num_pes,
@@ -243,7 +293,22 @@ char const * evaluateWithDump(
   char const * logfile
 )
 {
-  Cost<true> best_cost = evaluateHelper<true>(
+    Cost<true> best_cost = evaluateHelper<true>(
+        shape,
+        std::string{layer_type},
+        num_pes,
+        num_simd_lanes,
+        bit_width,
+        bandwidth,
+        num_levels,
+        buf_sizes,
+        num_sub_clusters,
+        dataflow,
+        search_permutations,
+        std::string{logfile}
+    );
+
+    Cost<false> best_cost_2 = evaluateHelper<false>(
     shape,
     std::string{layer_type},
     num_pes,
@@ -258,23 +323,98 @@ char const * evaluateWithDump(
     std::string{logfile}
   );
 
-  std::stringstream ret_ss;
-  ret_ss << "{";
-  if(best_cost.valid) {
-    std::string prefix = "";
-    for(auto const & node : best_cost.costs) {
-      if(std::isfinite(node.second)) {
-        ret_ss << prefix << '"' << MetricTypeToString(node.first) << "\": " << std::to_string(node.second);
-        prefix = ", ";
-      }
-    }
-  }
-  ret_ss << "}";
+    constexpr size_t num_metrics = 64; // adjust if you add/remove metrics
+    double * ret = new double[num_metrics];
+    
+    if(best_cost.valid) {
+        size_t idx = 0;
+        ret[idx++] = best_cost.costs[maestro::Computations];
+        ret[idx++] = best_cost.costs[maestro::AbsComputations];
+        ret[idx++] = best_cost.costs[maestro::ExactRunTime];
+        ret[idx++] = best_cost.costs[maestro::MaxRunTime];
+        ret[idx++] = best_cost.costs[maestro::MinRunTime];
 
-  std::string ret_s = ret_ss.str();
-  char * ret = new char[ret_s.size() + 1];
-  std::memcpy(ret, ret_s.c_str(), ret_s.size() + 1);
-  return ret;
+        ret[idx++] = best_cost.costs[maestro::Throughput];
+        ret[idx++] = best_cost.costs[maestro::ThroughputMin];
+        ret[idx++] = best_cost.costs[maestro::ThroughputMax];
+
+        ret[idx++] = best_cost.costs[maestro::AbsThroughput];
+        ret[idx++] = best_cost.costs[maestro::AbsThroughputMin];
+        ret[idx++] = best_cost.costs[maestro::AbsThroughputMax];
+
+        ret[idx++] = best_cost.costs[maestro::InputL2BufferReq];
+        ret[idx++] = best_cost.costs[maestro::InputL1BufferReq];
+
+        ret[idx++] = best_cost.costs[maestro::InputL2BufferWrite];
+        ret[idx++] = best_cost.costs[maestro::InputL2BufferRead];
+        ret[idx++] = best_cost.costs[maestro::InputL1BufferWrite];
+        ret[idx++] = best_cost.costs[maestro::InputL1BufferRead];
+        ret[idx++] = best_cost.costs[maestro::InputReuseFactor];
+
+        ret[idx++] = best_cost.costs[maestro::FilterL2BufferReq];
+        ret[idx++] = best_cost.costs[maestro::FilterL1BufferReq];
+
+        ret[idx++] = best_cost.costs[maestro::FilterL2BufferWrite];
+        ret[idx++] = best_cost.costs[maestro::FilterL2BufferRead];
+        ret[idx++] = best_cost.costs[maestro::FilterL1BufferWrite];
+        ret[idx++] = best_cost.costs[maestro::FilterL1BufferRead];
+        ret[idx++] = best_cost.costs[maestro::FilterReuseFactor];
+
+        ret[idx++] = best_cost.costs[maestro::OutputL2BufferReq];
+        ret[idx++] = best_cost.costs[maestro::OutputL1BufferReq];
+
+        ret[idx++] = best_cost.costs[maestro::OutputL2BufferWrite];
+        ret[idx++] = best_cost.costs[maestro::OutputL2BufferRead];
+        ret[idx++] = best_cost.costs[maestro::OutputL1BufferWrite];
+        ret[idx++] = best_cost.costs[maestro::OutputL1BufferRead];
+        ret[idx++] = best_cost.costs[maestro::OutputReuseFactor];
+
+        ret[idx++] = best_cost.costs[maestro::OverallReuseFactor];
+
+        ret[idx++] = best_cost.costs[maestro::InputL2BufferWriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::InputL2BufferReadEnergy];
+        ret[idx++] = best_cost.costs[maestro::InputL1BufferWriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::InputL1BufferReadEnergy];
+        ret[idx++] = best_cost.costs[maestro::FilterL2BufferWriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::FilterL2BufferReadEnergy];
+        ret[idx++] = best_cost.costs[maestro::FilterL1BufferWriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::FilterL1BufferReadEnergy];
+        ret[idx++] = best_cost.costs[maestro::OutputL2BufferWriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::OutputL2BufferReadEnergy];
+        ret[idx++] = best_cost.costs[maestro::OutputL1BufferWriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::OutputL1BufferReadEnergy];
+
+        ret[idx++] = best_cost.costs[maestro::OverallL2WriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::OverallL2ReadEnergy];
+        ret[idx++] = best_cost.costs[maestro::OverallL1WriteEnergy];
+        ret[idx++] = best_cost.costs[maestro::OverallL1ReadEnergy];
+
+        ret[idx++] = best_cost.costs[maestro::OverallEnergy];
+
+        ret[idx++] = best_cost.costs[maestro::PeakBWReq];
+        ret[idx++] = best_cost.costs[maestro::AvgBWReq];
+
+        ret[idx++] = best_cost.costs[maestro::IngressDelayMin];
+        ret[idx++] = best_cost.costs[maestro::IngressDelayMax];
+        ret[idx++] = best_cost.costs[maestro::IngressDelayAvg];
+
+        ret[idx++] = best_cost.costs[maestro::EgressDelayMin];
+        ret[idx++] = best_cost.costs[maestro::EgressDelayMax];
+        ret[idx++] = best_cost.costs[maestro::EgressDelayAvg];
+
+        ret[idx++] = best_cost.costs[maestro::ComputationDelayMin];
+        ret[idx++] = best_cost.costs[maestro::ComputationDelayMax];
+        ret[idx++] = best_cost.costs[maestro::ComputationDelayAvg];
+
+        ret[idx++] = best_cost.costs[maestro::NumUtilizedPEs];
+        ret[idx++] = best_cost.costs[maestro::Area];
+        ret[idx++] = best_cost_2.power;
+    } else {
+        for(size_t i = 0; i < num_metrics; ++i)
+            ret[i] = 0.0;
+    }
+
+    return ret;
 }
 
 extern "C" __attribute__((visibility("default")))

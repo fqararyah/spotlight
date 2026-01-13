@@ -44,6 +44,42 @@ def _verify_input_constraints(args, shape, num_simd_lanes, bit_width, bandwidth,
 
     return valid_status
 
+ACCESS_KEYS_DRAM_READ = ['FilterL2BufferWrite', 'InputL2BufferWrite']
+ACCESS_KEYS_DRAM_WRITE = ['OutputL2BufferWrite']
+ACCESS_KEYS_L2_READ = ['FilterL2BufferRead', 'InputL2BufferRead', 'OutputL2BufferRead']
+ACCESS_KEYS_L2_WRITE = ['FilterL2BufferWrite', 'InputL2BufferWrite', 'OutputL2BufferWrite']
+ACCESS_KEYS_L1_READ = ['FilterL1BufferRead', 'InputL1BufferRead', 'OutputL1BufferRead']
+ACCESS_KEYS_L1_WRITE = ['FilterL1BufferWrite', 'InputL1BufferWrite', 'OutputL1BufferWrite']
+
+METRIC_NAMES = [
+    'Computations', 'AbsComputations', 'ExactRunTime', 'MaxRunTime', 'MinRunTime',
+    'Throughput', 'ThroughputMin', 'ThroughputMax',
+    'AbsThroughput', 'AbsThroughputMin', 'AbsThroughputMax',
+    'InputL2BufferReq', 'InputL1BufferReq',
+    'InputL2BufferWrite', 'InputL2BufferRead', 'InputL1BufferWrite', 'InputL1BufferRead', 'InputReuseFactor',
+    'FilterL2BufferReq', 'FilterL1BufferReq',
+    'FilterL2BufferWrite', 'FilterL2BufferRead', 'FilterL1BufferWrite', 'FilterL1BufferRead', 'FilterReuseFactor',
+    'OutputL2BufferReq', 'OutputL1BufferReq',
+    'OutputL2BufferWrite', 'OutputL2BufferRead', 'OutputL1BufferWrite', 'OutputL1BufferRead', 'OutputReuseFactor',
+    'OverallReuseFactor',
+    'InputL2BufferWriteEnergy', 'InputL2BufferReadEnergy',
+    'InputL1BufferWriteEnergy', 'InputL1BufferReadEnergy',
+    'FilterL2BufferWriteEnergy', 'FilterL2BufferReadEnergy',
+    'FilterL1BufferWriteEnergy', 'FilterL1BufferReadEnergy',
+    'OutputL2BufferWriteEnergy', 'OutputL2BufferReadEnergy',
+    'OutputL1BufferWriteEnergy', 'OutputL1BufferReadEnergy',
+    'OverallL2WriteEnergy', 'OverallL2ReadEnergy',
+    'OverallL1WriteEnergy', 'OverallL1ReadEnergy',
+    'OverallEnergy',
+    'PeakBWReq', 'AvgBWReq',
+    'IngressDelayMin', 'IngressDelayMax', 'IngressDelayAvg',
+    'EgressDelayMin', 'EgressDelayMax', 'EgressDelayAvg',
+    'ComputationDelayMin', 'ComputationDelayMax', 'ComputationDelayAvg',
+    'NumUtilizedPEs',
+    'Area',
+    'Power'
+]
+
 def get_eval_func(args):
     if platform.system() == 'Linux':
         spotlight = ctypes.CDLL(os.path.join('build', 'libspotlight.so'))
@@ -71,10 +107,12 @@ def get_eval_func(args):
         ctypes.c_ulonglong,    # search_permutations
         ctypes.c_char_p,    # logfile
     )
-
+        
+    # Return type: numeric array of doubles
     if args.dump_all:
-        evaluate.restype = ctypes.c_char_p
+        evaluate.restype = ndpointer(dtype=ctypes.c_double, shape=(len(METRIC_NAMES),))
     else:
+        # legacy numeric: 5 main metrics
         evaluate.restype = ndpointer(dtype=ctypes.c_double, shape=(5,))
 
     return evaluate
@@ -176,7 +214,24 @@ def convert_args_and_invoke(args, eval_func, shape, num_simd_lanes, bit_width, b
     )
 
     if args.dump_all:
-        cost = json.loads(ret.decode('utf-8'))
+        cost = {name: ret[i] for i, name in enumerate(METRIC_NAMES)}
+        cost['dram_accesses'] = 0
+        cost['l2_reads'] = 0
+        cost['l2_writes'] = 0
+        cost['l1_reads'] = 0
+        cost['l1_writes'] = 0
+        for key in ACCESS_KEYS_DRAM_READ:
+            cost['dram_accesses'] += cost[key]
+        for key in ACCESS_KEYS_DRAM_WRITE:
+            cost['dram_accesses'] += cost[key]
+        for key in ACCESS_KEYS_L2_READ:
+            cost['l2_reads'] += cost[key]
+        for key in ACCESS_KEYS_L2_WRITE:
+            cost['l2_writes'] += cost[key]
+        for key in ACCESS_KEYS_L1_READ:
+            cost['l1_reads'] += cost[key]
+        for key in ACCESS_KEYS_L1_WRITE:
+            cost['l1_writes'] += cost[key]
     else:
         cost = {
             'ExactRunTime': ret[0],

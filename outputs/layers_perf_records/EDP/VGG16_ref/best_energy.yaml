@@ -1,0 +1,99 @@
+C_3_FH_3_FW_3_IH_224_IW_224_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 0
+  edp: '2.0044e+12'
+  energy: '1.0429e+07'
+  delay: '1.9219e+05'
+  throughput: '3.8323e+02'
+  area: '5.0710e+07'
+  power: '2.380437e+04'
+  complete_performance_record_str: '>> 0 opt_layer target 2.0044e+12 edp 2.0044e+12
+    energy 1.0429e+07 delay 1.9219e+05 throughput 3.8323e+02 area 5.0710e+07 power
+    2.380437e+04'
+C_64_FH_3_FW_3_IH_224_IW_224_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 1
+  edp: '1.8347e+14'
+  energy: '1.0060e+08'
+  delay: '1.8238e+06'
+  throughput: '7.1797e+02'
+  area: '8.2771e+07'
+  power: '1.366673e+04'
+  complete_performance_record_str: '>> 1 opt_layer target 1.8347e+14 edp 1.8347e+14
+    energy 1.0060e+08 delay 1.8238e+06 throughput 7.1797e+02 area 8.2771e+07 power
+    1.366673e+04'
+C_64_FH_3_FW_3_IH_112_IW_112_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 2
+  edp: '2.6190e+14'
+  energy: '1.0024e+08'
+  delay: '2.6127e+06'
+  throughput: '3.5397e+02'
+  area: '7.5997e+07'
+  power: '5.857969e+02'
+  complete_performance_record_str: '>> 2 opt_layer target 2.6190e+14 edp 2.6190e+14
+    energy 1.0024e+08 delay 2.6127e+06 throughput 3.5397e+02 area 7.5997e+07 power
+    5.857969e+02'
+C_128_FH_3_FW_3_IH_112_IW_112_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 3
+  edp: '7.1380e+14'
+  energy: '1.0073e+08'
+  delay: '7.0865e+06'
+  throughput: '1.9576e+02'
+  area: '7.9320e+07'
+  power: '7.281151e+03'
+  complete_performance_record_str: '>> 3 opt_layer target 7.1380e+14 edp 7.1380e+14
+    energy 1.0073e+08 delay 7.0865e+06 throughput 1.9576e+02 area 7.9320e+07 power
+    7.281151e+03'
+C_128_FH_3_FW_3_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 4
+  edp: '6.8502e+14'
+  energy: '1.0619e+08'
+  delay: '6.4512e+06'
+  throughput: '1.3824e+02'
+  area: '5.1729e+07'
+  power: '3.217788e+02'
+  complete_performance_record_str: '>> 4 opt_layer target 6.8502e+14 edp 6.8502e+14
+    energy 1.0619e+08 delay 6.4512e+06 throughput 1.3824e+02 area 5.1729e+07 power
+    3.217788e+02'
+C_256_FH_3_FW_3_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 5
+  edp: '1.5297e+14'
+  energy: '1.0063e+08'
+  delay: '1.5201e+06'
+  throughput: '5.8667e+02'
+  area: '6.2498e+07'
+  power: '6.775280e+03'
+  complete_performance_record_str: '>> 5 opt_layer target 1.5297e+14 edp 1.5297e+14
+    energy 1.0063e+08 delay 1.5201e+06 throughput 5.8667e+02 area 6.2498e+07 power
+    6.775280e+03'
+C_256_FH_3_FW_3_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 6
+  edp: '4.5335e+14'
+  energy: '1.0430e+08'
+  delay: '4.3466e+06'
+  throughput: '2.1278e+02'
+  area: '7.9315e+07'
+  power: '7.117980e+03'
+  complete_performance_record_str: '>> 6 opt_layer target 4.5335e+14 edp 4.5335e+14
+    energy 1.0430e+08 delay 4.3466e+06 throughput 2.1278e+02 area 7.9315e+07 power
+    7.117980e+03'
+C_512_FH_3_FW_3_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 7
+  edp: '4.9895e+14'
+  energy: '1.0333e+08'
+  delay: '4.8288e+06'
+  throughput: '3.0488e+02'
+  area: '5.9511e+07'
+  power: '5.237705e+03'
+  complete_performance_record_str: '>> 7 opt_layer target 4.9895e+14 edp 4.9895e+14
+    energy 1.0333e+08 delay 4.8288e+06 throughput 3.0488e+02 area 5.9511e+07 power
+    5.237705e+03'
+C_512_FH_3_FW_3_IH_14_IW_14_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 8
+  edp: '1.0209e+13'
+  energy: '1.0650e+07'
+  delay: '9.5862e+05'
+  throughput: '1.2798e+02'
+  area: '5.9451e+07'
+  power: '3.237464e+03'
+  complete_performance_record_str: '>> 8 opt_layer target 1.0209e+13 edp 1.0209e+13
+    energy 1.0650e+07 delay 9.5862e+05 throughput 1.2798e+02 area 5.9451e+07 power
+    3.237464e+03'

@@ -103,7 +103,12 @@ class Optimizer:
                 if success:
                     sw_sample = search_utils.SWSample(sw_point, sw_feats, cost)
                     if self.args.print_sw_samples:
-                        self.log('         {} sw_sample {} {} t {} sec', valid_sample_count, sw_sample.getResultString(), str(sw_sample), sample_end_time - sample_start_time)
+                        additional_log = ''
+                        if self.args.dump_all:
+                            additional_log += ' dram_accesses {} l2_reads {} l2_writes {} l1_reads {} l1_writes {}'.format(
+                                cost['dram_accesses'], cost['l2_reads'], cost['l2_writes'], cost['l1_reads'], cost['l1_writes'])
+                        self.log('         {} sw_sample {} {} t {} sec', valid_sample_count, sw_sample.getResultString(), additional_log,
+                                 str(sw_sample), sample_end_time - sample_start_time)
                     if self.args.sw_progress_bar:
                         pbar.update(1)
                     layer_results.add(sw_sample)
