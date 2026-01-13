@@ -122,7 +122,11 @@ class Optimizer:
             layer_end_time = time.perf_counter()
 
             if model_status:
-                self.log('      {} opt_layer {} t {} sec', i, str(layer_results), layer_end_time - layer_start_time)
+                additional_log = ''
+                if self.args.dump_all:
+                    additional_log += ' dram_accesses {} l2_reads {} l2_writes {} l1_reads {} l1_writes {}'.format(
+                        cost['dram_accesses'], cost['l2_reads'], cost['l2_writes'], cost['l1_reads'], cost['l1_writes'])
+                self.log('      {} opt_layer {} t {} sec', i, str(layer_results), additional_log, layer_end_time - layer_start_time)
                 model_results.append(layer_results)
             else:
                 self.log('      {} opt_layer INVALID t {} sec', i, layer_end_time - layer_start_time)

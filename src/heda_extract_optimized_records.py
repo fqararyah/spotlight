@@ -14,18 +14,24 @@ METRICS_OF_INTEREST = [
     "throughput",
     "area",
     "power",
+    "dram_accesses",
+    "l2_reads",
+    "l2_writes",
+    "l1_reads",
+    "l1_writes"
 ]
 
 OPT_LAYER_RE = re.compile(r"^(\d+)\s+opt_layer\b")
 KV_RE = re.compile(r"^\s*([a-zA-Z_]+)\s*:\s*([0-9eE.+-]+)\s*$")
 INLINE_METRIC_RE = re.compile(
-    r"\b(edp|energy|delay|latency|throughput|area|power)\s+([0-9eE.+-]+)"
+    r"\b("
+    r"edp|energy|delay|latency|throughput|area|power|"
+    r"dram_accesses|l2_reads|l2_writes|l1_reads|l1_writes"
+    r")\s+([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\b"
 )
 COMPLETE_RECORD_RE = re.compile(
     r"^(.*?\bpower\s+[0-9eE.+-]+)"
 )
-
-
 
 def read_layer_representations(layer_file):
     layers = []

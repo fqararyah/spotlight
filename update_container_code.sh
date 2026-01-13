@@ -18,8 +18,8 @@ for py_file in "$SRC_PY_DIR"/*.py; do
     docker cp "$py_file" $CONTAINER_NAME:$APP_PATH/src/
 done
 
-# # Copy all shell scripts directly in spotlight root
-# for sh_file in "$HOST_SH_DIR"/*.sh; do
-#     [ -e "$sh_file" ] || continue
-#     docker cp "$sh_file" $CONTAINER_NAME:$APP_PATH/
-# done
+# Copy all shell scripts directly in spotlight root
+for sh_file in "$HOST_SH_DIR"/*.sh; do
+    [ -e "$sh_file" ] || continue
+    docker cp "$sh_file" $CONTAINER_NAME:$APP_PATH/
+done
