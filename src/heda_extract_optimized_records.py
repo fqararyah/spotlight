@@ -18,20 +18,10 @@ METRICS_OF_INTEREST = [
     "l2_reads",
     "l2_writes",
     "l1_reads",
-    "l1_writes"
+    "l1_writes",
+    "l1_buf_size",
+    "l2_buf_size"
 ]
-
-OPT_LAYER_RE = re.compile(r"^(\d+)\s+opt_layer\b")
-KV_RE = re.compile(r"^\s*([a-zA-Z_]+)\s*:\s*([0-9eE.+-]+)\s*$")
-INLINE_METRIC_RE = re.compile(
-    r"\b("
-    r"edp|energy|delay|latency|throughput|area|power|"
-    r"dram_accesses|l2_reads|l2_writes|l1_reads|l1_writes"
-    r")\s+([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\b"
-)
-COMPLETE_RECORD_RE = re.compile(
-    r"^(.*?\bpower\s+[0-9eE.+-]+)"
-)
 
 def read_layer_representations(layer_file):
     layers = []
@@ -43,41 +33,76 @@ def read_layer_representations(layer_file):
     return layers
 
 
+OPT_LAYER_RE = re.compile(r"^(\d+)\s+opt_layer\b")
+INLINE_METRIC_RE = re.compile(
+    r"\b("
+    r"edp|energy|delay|latency|throughput|area|power|"
+    r"dram_accesses|l2_reads|l2_writes|l1_reads|l1_writes|"
+    r"l1_buf_size|l2_buf_size"
+    r")\s+([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\b"
+)
+COMPLETE_RECORD_RE = re.compile(
+    r"^(.*?\bpower\s+[0-9eE.+-]+)"
+)
+
+INLINE_METRIC_RE2 = re.compile(
+    r"'(l1_buf_size|l2_buf_size)'\s*:\s*"
+    r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)"
+)
+
+HW_SAMPLE_RE = re.compile(r"^\d+\s+hw_sample\b")
+
+HW_DICT_RE = re.compile(r"\{[^}]*\}")  # grabs {...}
+
+HW_KV_RE = re.compile(
+    r"'([a-zA-Z0-9_]+)'\s*:\s*"
+    r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?|\[[^\]]*\])"
+)
+
+HW_BUF_RE = re.compile(
+    r"'(l1_buf_size|l2_buf_size)'\s*:\s*"
+    r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)"
+)
+
+
 def read_results(results_file):
-    """
-    Returns:
-      results[layer_index] = list of metric dicts
-    """
     results = defaultdict(list)
+    pending_layers = []
 
     with open(results_file, "r") as f:
-        for line in f:
-            raw_line = line.rstrip("\n")
+        for raw_line in f:
             line = raw_line.strip()
             if not line:
                 continue
 
             m = OPT_LAYER_RE.match(line)
-            if not m:
+            if m:
+                layer_idx = int(m.group(1))
+                record = {"layer_id": layer_idx}
+
+                for key, val in INLINE_METRIC_RE.findall(line):
+                    record[key] = val
+
+                for key, val in INLINE_METRIC_RE2.findall(line):
+                    record[key] = val
+
+                pending_layers.append(record)
                 continue
 
-            layer_idx = int(m.group(1))
-            record = {}
+            if HW_SAMPLE_RE.match(line):
+                hw = {}
 
-            # Keep layer id
-            record["layer_id"] = layer_idx
+                # extract only what you care about
+                for k, v in HW_BUF_RE.findall(line):
+                    hw[k] = v
 
-            # Extract metrics (KEEP STRING FORMATTING)
-            for key, val in INLINE_METRIC_RE.findall(line):
-                record[key] = val
+                # attach HW to pending layers
+                for rec in pending_layers:
+                    for k, v in hw.items():
+                        rec[k] = v    # keep original names
+                    results[rec["layer_id"]].append(rec)
 
-            # Extract full performance record string (up to power)
-            m_full = COMPLETE_RECORD_RE.match(line)
-            if m_full:
-                record["complete_performance_record_str"] = "{}".format(">> " + str(m_full.group(1)))
-
-            if record:
-                results[layer_idx].append(record)
+                pending_layers.clear()
 
     return results
 

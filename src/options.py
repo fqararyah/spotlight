@@ -20,7 +20,7 @@ class DefaultArgs:
     pe_high = 256
     pe_step = 1
     buffer_low = 64
-    buffer_high = 1024
+    buffer_high = 2048
     buffer_step = 64
     max_area = 4.3841e+09
     max_power = 1.34877e+05

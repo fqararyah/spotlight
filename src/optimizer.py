@@ -126,7 +126,9 @@ class Optimizer:
                 if self.args.dump_all:
                     additional_log += ' dram_accesses {} l2_reads {} l2_writes {} l1_reads {} l1_writes {}'.format(
                         cost['dram_accesses'], cost['l2_reads'], cost['l2_writes'], cost['l1_reads'], cost['l1_writes'])
-                self.log('      {} opt_layer {} t {} sec', i, str(layer_results), additional_log, layer_end_time - layer_start_time)
+                self.log('      {} opt_layer {} t {} sec', i, 
+                         str(layer_results),
+                          additional_log, layer_end_time - layer_start_time)
                 model_results.append(layer_results)
             else:
                 self.log('      {} opt_layer INVALID t {} sec', i, layer_end_time - layer_start_time)
@@ -197,7 +199,9 @@ class Optimizer:
                         lambda x, y:  (x[0] + y[0], max(x[1], y[1])),
                         lambda x: x[0],
                     )
-                self.log('   {} hw_sample {} t {} sec', valid_sample_count, hw_sample, sample_end_time - sample_start_time)
+                self.log('   {} hw_sample {} t {} sec', valid_sample_count, 
+                         str(hw_sample).replace('l1_buf_size', 'l2_buf_size').replace('l0_buf_size', 'l1_buf_size'),
+                           sample_end_time - sample_start_time)
                 if self.args.hw_progress_bar:
                     pbar.update(1)
                 hw_results.add(hw_sample)
@@ -576,5 +580,5 @@ class Exhaustive(Optimizer):
             idx = self.args.exhaustive_hw_start_idx + np.random.randint(self.args.exhaustive_hw_end_idx - self.args.exhaustive_hw_start_idx)
             idx %= hw_space.size
             hw_point = hw_space.build_point(idx)
-            self.log('hw_sample idx {} {}', idx, str(hw_point))
+            self.log('hw_sample idx {} {}', idx, str(hw_point).replace('l1_buf_size', 'l2_buf_size').replace('l0_buf_size', 'l1_buf_size'))
             self.opt_sw(hw_space.num_levels, hw_point)
