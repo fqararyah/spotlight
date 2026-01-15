@@ -44,13 +44,6 @@ def _verify_input_constraints(args, shape, num_simd_lanes, bit_width, bandwidth,
 
     return valid_status
 
-ACCESS_KEYS_DRAM_READ = ['FilterL2BufferWrite', 'InputL2BufferWrite']
-ACCESS_KEYS_DRAM_WRITE = ['OutputL2BufferWrite']
-ACCESS_KEYS_L2_READ = ['FilterL2BufferRead', 'InputL2BufferRead', 'OutputL2BufferRead']
-ACCESS_KEYS_L2_WRITE = ['FilterL2BufferWrite', 'InputL2BufferWrite', 'OutputL2BufferWrite']
-ACCESS_KEYS_L1_READ = ['FilterL1BufferRead', 'InputL1BufferRead', 'OutputL1BufferRead']
-ACCESS_KEYS_L1_WRITE = ['FilterL1BufferWrite', 'InputL1BufferWrite', 'OutputL1BufferWrite']
-
 METRIC_NAMES = [
     'Computations', 'AbsComputations', 'ExactRunTime', 'MaxRunTime', 'MinRunTime',
     'Throughput', 'ThroughputMin', 'ThroughputMax',
@@ -79,6 +72,12 @@ METRIC_NAMES = [
     'Area',
     'Power'
 ]
+
+ACCESS_KEYS_DRAM_READ = ['FilterL2BufferWrite', 'InputL2BufferWrite']
+ACCESS_KEYS_L2_READ = ['FilterL2BufferRead', 'InputL2BufferRead', 'OutputL2BufferRead']
+ACCESS_KEYS_L2_WRITE = ['FilterL2BufferWrite', 'InputL2BufferWrite', 'OutputL2BufferWrite']
+ACCESS_KEYS_L1_READ = ['FilterL1BufferRead', 'InputL1BufferRead', 'OutputL1BufferRead']
+ACCESS_KEYS_L1_WRITE = ['FilterL1BufferWrite', 'InputL1BufferWrite', 'OutputL1BufferWrite']
 
 def get_eval_func(args):
     if platform.system() == 'Linux':
@@ -215,15 +214,16 @@ def convert_args_and_invoke(args, eval_func, shape, num_simd_lanes, bit_width, b
 
     if args.dump_all:
         cost = {name: ret[i] for i, name in enumerate(METRIC_NAMES)}
-        cost['dram_accesses'] = 0
+        cost['dram_reads'] = 0
+        cost['dram_writes'] = 0
         cost['l2_reads'] = 0
         cost['l2_writes'] = 0
         cost['l1_reads'] = 0
         cost['l1_writes'] = 0
         for key in ACCESS_KEYS_DRAM_READ:
-            cost['dram_accesses'] += cost[key]
-        for key in ACCESS_KEYS_DRAM_WRITE:
-            cost['dram_accesses'] += cost[key]
+            cost['dram_reads'] += cost[key]
+        if 'CONV' in shape[0]:
+            cost['dram_writes'] += shape[1]['K'] * (shape[1]['X'] / shape[1]['X']) * (shape[2]['Y'] / shape[2]['Y'])
         for key in ACCESS_KEYS_L2_READ:
             cost['l2_reads'] += cost[key]
         for key in ACCESS_KEYS_L2_WRITE:

@@ -6,9 +6,11 @@ C_1_FH_1_FW_512_IH_512_IW_1_NF_1536_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1
   throughput: '0.0000e+00'
   area: '9.9787e+06'
   power: '1.247742e+02'
-  complete_performance_record_str: '>> 0 opt_layer target 2.7522e+05 edp 2.7522e+05
-    energy 2.7522e+05 delay 1.0000e+00 throughput 0.0000e+00 area 9.9787e+06 power
-    1.247742e+02'
+  num_simd_lane: 12
+  l1_buf_size: 655360
+  subclusters:
+  - 66
+  - 1
 C_1_FH_64_FW_1_IH_128_IW_64_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   layer_id: 1
   edp: '6.2036e+11'
@@ -17,9 +19,11 @@ C_1_FH_64_FW_1_IH_128_IW_64_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   throughput: '5.1096e+02'
   area: '1.1289e+08'
   power: '7.556260e+03'
-  complete_performance_record_str: '>> 1 opt_layer target 6.2036e+11 edp 6.2036e+11
-    energy 6.1693e+06 delay 1.0056e+05 throughput 5.1096e+02 area 1.1289e+08 power
-    7.556260e+03'
+  num_simd_lane: 4
+  l1_buf_size: 393216
+  subclusters:
+  - 249
+  - 1
 C_1_FH_128_FW_1_IH_64_IW_128_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   layer_id: 2
   edp: '3.4817e+11'
@@ -28,9 +32,11 @@ C_1_FH_128_FW_1_IH_64_IW_128_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1
   throughput: '3.9896e+00'
   area: '9.0016e+07'
   power: '2.993398e+04'
-  complete_performance_record_str: '>> 2 opt_layer target 3.4817e+11 edp 3.4817e+11
-    energy 3.4746e+05 delay 1.0020e+06 throughput 3.9896e+00 area 9.0016e+07 power
-    2.993398e+04'
+  num_simd_lane: 4
+  l1_buf_size: 917504
+  subclusters:
+  - 202
+  - 1
 C_1_FH_1_FW_512_IH_512_IW_1_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   layer_id: 3
   edp: '3.3115e+05'
@@ -39,9 +45,11 @@ C_1_FH_1_FW_512_IH_512_IW_1_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   throughput: '0.0000e+00'
   area: '1.0768e+07'
   power: '8.441200e+01'
-  complete_performance_record_str: '>> 3 opt_layer target 3.3115e+05 edp 3.3115e+05
-    energy 3.3115e+05 delay 1.0000e+00 throughput 0.0000e+00 area 1.0768e+07 power
-    8.441200e+01'
+  num_simd_lane: 3
+  l1_buf_size: 589824
+  subclusters:
+  - 67
+  - 1
 C_1_FH_1_FW_512_IH_512_IW_1_NF_2048_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   layer_id: 4
   edp: '1.1590e+06'
@@ -50,9 +58,11 @@ C_1_FH_1_FW_512_IH_512_IW_1_NF_2048_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1
   throughput: '0.0000e+00'
   area: '3.6447e+07'
   power: '3.024219e+02'
-  complete_performance_record_str: '>> 4 opt_layer target 1.1590e+06 edp 1.1590e+06
-    energy 1.1590e+06 delay 1.0000e+00 throughput 0.0000e+00 area 3.6447e+07 power
-    3.024219e+02'
+  num_simd_lane: 6
+  l1_buf_size: 327680
+  subclusters:
+  - 30
+  - 3
 C_1_FH_1_FW_2048_IH_2048_IW_1_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   layer_id: 5
   edp: '1.1590e+06'
@@ -61,6 +71,8 @@ C_1_FH_1_FW_2048_IH_2048_IW_1_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_
   throughput: '0.0000e+00'
   area: '1.9799e+07'
   power: '1.475600e+02'
-  complete_performance_record_str: '>> 5 opt_layer target 1.1590e+06 edp 1.1590e+06
-    energy 1.1590e+06 delay 1.0000e+00 throughput 0.0000e+00 area 1.9799e+07 power
-    1.475600e+02'
+  num_simd_lane: 3
+  l1_buf_size: 720896
+  subclusters:
+  - 92
+  - 1

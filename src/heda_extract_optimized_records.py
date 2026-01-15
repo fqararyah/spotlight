@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+import math
 import os
 import sys
 import yaml
 import re
 from collections import defaultdict
+import search_utils
 
 METRICS_OF_INTEREST = [
     "edp",
@@ -20,9 +22,14 @@ METRICS_OF_INTEREST = [
     "l1_reads",
     "l1_writes",
     "l1_buf_size",
-    "l2_buf_size"
+    "l2_buf_size",
+    "subclusters"
 ]
 
+class NoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
+    
 def read_layer_representations(layer_file):
     layers = []
     with open(layer_file, "r") as f:
@@ -37,8 +44,8 @@ OPT_LAYER_RE = re.compile(r"^(\d+)\s+opt_layer\b")
 INLINE_METRIC_RE = re.compile(
     r"\b("
     r"edp|energy|delay|latency|throughput|area|power|"
-    r"dram_accesses|l2_reads|l2_writes|l1_reads|l1_writes|"
-    r"l1_buf_size|l2_buf_size"
+    r"dram_reads|dram_writes|l2_reads|l2_writes|l1_reads|l1_writes|"
+    r"l1_buf_size|l2_buf_size|subclusters"
     r")\s+([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\b"
 )
 COMPLETE_RECORD_RE = re.compile(
@@ -46,7 +53,7 @@ COMPLETE_RECORD_RE = re.compile(
 )
 
 INLINE_METRIC_RE2 = re.compile(
-    r"'(l1_buf_size|l2_buf_size)'\s*:\s*"
+    r"'(l1_buf_size|l2_buf_size|subclusters)'\s*:\s*"
     r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)"
 )
 
@@ -60,10 +67,13 @@ HW_KV_RE = re.compile(
 )
 
 HW_BUF_RE = re.compile(
-    r"'(l1_buf_size|l2_buf_size)'\s*:\s*"
-    r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)"
+    r"'(l1_buf_size|l2_buf_size|subclusters|num_simd_lane)'\s*:\s*"
+    r"("
+    r"\[[^\]]*\]"  # list, e.g. [26,6]
+    r"|"
+    r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?"  # number
+    r")"
 )
-
 
 def read_results(results_file):
     results = defaultdict(list)
@@ -94,7 +104,10 @@ def read_results(results_file):
 
                 # extract only what you care about
                 for k, v in HW_BUF_RE.findall(line):
-                    hw[k] = v
+                    if k == "subclusters":
+                        hw[k] = [int(x) for x in v.strip("[]").split(",")]
+                    else:
+                        hw[k] = int(v)
 
                 # attach HW to pending layers
                 for rec in pending_layers:
@@ -163,7 +176,7 @@ def main():
                 for fname, data in outputs.items():
                     out_file_path = os.path.join(out_path, fname)
                     with open(out_file_path, "w") as f:
-                        yaml.dump(data, f, sort_keys=False)
+                        yaml.dump(data, f, sort_keys=False, Dumper=NoAliasDumper)
                     print(f"Wrote {out_file_path}")
 
 

@@ -124,8 +124,8 @@ class Optimizer:
             if model_status:
                 additional_log = ''
                 if self.args.dump_all:
-                    additional_log += ' dram_accesses {} l2_reads {} l2_writes {} l1_reads {} l1_writes {}'.format(
-                        cost['dram_accesses'], cost['l2_reads'], cost['l2_writes'], cost['l1_reads'], cost['l1_writes'])
+                    additional_log += ' dram_reads {} dram_writes {} l2_reads {} l2_writes {} l1_reads {} l1_writes {}'.format(
+                        cost['dram_reads'], cost['dram_writes'], cost['l2_reads'], cost['l2_writes'], cost['l1_reads'], cost['l1_writes'])
                 self.log('      {} opt_layer {} t {} sec', i, 
                          str(layer_results),
                           additional_log, layer_end_time - layer_start_time)
