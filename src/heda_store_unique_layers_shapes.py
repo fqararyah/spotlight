@@ -15,7 +15,7 @@ def main():
         out_file = None
 
     shapes = layers.get_shapes(args.layers, args.ignore_stride, True, args.remove_duplicate_layers)
-    print(shapes)
+
     if out_file:
         print(out_file)
         for shape in shapes:
