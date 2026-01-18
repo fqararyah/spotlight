@@ -86,14 +86,14 @@ def convert_line(line, counter):
 
 def main():
     # Adjusted path logic to match your structure
-    base_path = os.path.join(os.path.dirname(__file__), '../outputs/unique_shapes/')
+    base_path = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/')
     
     for dirpath, _, files in os.walk(base_path):
         # --- RESTART COUNTER FOR EACH DIRECTORY ---        
         # Filter for your specific input files      
         # Open output file in write mode ('w') to refresh it for this directory
         for fn in files:
-            if 'heda_shapes.out' not in fn:
+            if 'unique_layers_orig.txt' not in fn:
                 continue 
             layer_counter = 0
             input_file_path = os.path.join(dirpath, fn)

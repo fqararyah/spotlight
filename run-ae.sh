@@ -85,14 +85,14 @@ run_single() {
             ;;
     esac
 
-    case $model in
-        VGG16|RESNET|MOBILENET|MNASNET|TRANSFORMER)
-            ;;
-        *)
-            echo "Invalid model: $model"
-            help_single
-            ;;
-    esac
+    # case $model in
+    #     VGG16|RESNET|MOBILENET|MNASNET|TRANSFORMER)
+    #         ;;
+    #     *)
+    #         echo "Invalid model: $model"
+    #         help_single
+    #         ;;
+    # esac
 
     case $target in
         EDP)

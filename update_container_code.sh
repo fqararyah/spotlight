@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Container and image names
-CONTAINER_NAME="strange_tharp"  # spotlight_container
+CONTAINER_NAME="relaxed_bhaskara"  # spotlight_container
 CONTAINER_ID=$(docker ps -a -q --filter "name=$CONTAINER_NAME" | head -n 1)
 
 # Container working directory

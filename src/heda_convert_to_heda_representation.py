@@ -61,18 +61,26 @@ def convert_line(line):
         if src in dims:
             parts.append(f"{dst}_{dims[src]}")
 
+    parts.sort()
+    strides_part = []
     # Strides / reductions
     for src, dst in strides_map:
         if src in strides:
-            parts.append(f"{dst}_{strides[src]}")
-
+            strides_part.append(f"{dst}_{strides[src]}")
+            
+    if 'matmul' in name.lower() and not strides_part:
+        strides_part = ['IR_REDUCTION_1_WR_REDUCTION_1']
+                
+    parts += strides_part
+    
     return "_".join(parts)
 
 def main():
-    path = os.path.join(os.path.dirname(__file__), '../outputs/unique_shapes/')
+    r_path = '../inputs/unique_layers/'#'../outputs/unique_shapes/'
+    path = os.path.join(os.path.dirname(__file__), r_path)
     for dirpath, _, files in os.walk(path):
         for fn in files:
-            if 'shapes' not in fn or '.txt' not in fn:
+            if 'shapes_verify' not in fn:#'shapes.txt' not in fn:
                 continue         
             input_file = os.path.join(dirpath, fn)
             output_file = os.path.join(
