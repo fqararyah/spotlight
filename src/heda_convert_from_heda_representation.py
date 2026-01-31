@@ -2,6 +2,7 @@
 
 import os
 import re
+import heda_convert_from_heda_post_process
 
 # ----------------------------
 # Dimension mappings
@@ -116,3 +117,4 @@ def main():
         
 if __name__ == "__main__":
     main()
+    heda_convert_from_heda_post_process.main()

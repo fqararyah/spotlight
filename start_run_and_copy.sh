@@ -6,7 +6,7 @@
 CONTAINER_NAME="relaxed_bhaskara"
 BASE_DIR="./outputs"
 PREFIX="results"
-NUM_RUNS=2
+NUM_RUNS=8
 
 mkdir -p "$BASE_DIR"
 

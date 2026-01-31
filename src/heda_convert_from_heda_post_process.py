@@ -34,7 +34,11 @@ def process_file(input_path, output_path, out_path_ids):
         print(f"An error occurred: {e}")
 
 # Usage
-in_path = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/shapes_verify.out')
-out_path_full = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/final_shapes.out')
-out_path_ids = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/layer_ids.out')
-process_file(in_path, out_path_full, out_path_ids)
+def main():
+    in_path = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/shapes_verify.out')
+    out_path_full = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/final_shapes.out')
+    out_path_ids = os.path.join(os.path.dirname(__file__), '../inputs/unique_layers/layer_ids.out')
+    process_file(in_path, out_path_full, out_path_ids)
+
+if __name__ == "__main__":
+    main()
