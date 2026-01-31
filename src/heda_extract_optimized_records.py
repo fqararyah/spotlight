@@ -182,12 +182,14 @@ def build_yaml_median(best_records_list, layer_reprs, metric):
 
 def main():
     # Read model names
-    LAYER_IDS_PATH = "/media/SSD2TB/fareed/wd/my_repos/spotligh/spotlight/inputs/unique_layers/layer_ids.out"
+    script_path = os.path.dirname(__file__)
+    LAYER_IDS_PATH = os.path.join(script_path, "../inputs/unique_layers/layer_ids.out")
+    UNIQUE_LAYERS_DIR = os.path.join(script_path, '../inputs/unique_layers/heda_shapes.out')
     with open(LAYER_IDS_PATH) as f:
         model_names = [line.strip() for line in f if line.strip()]
 
-    shapes_root = os.path.join(os.path.dirname(__file__), '../outputs/unique_shapes/')
-    out_path_template = os.path.join(os.path.dirname(__file__), '../outputs/layers_perf_records/')
+    shapes_root = os.path.join(script_path, '../outputs/unique_shapes/')
+    out_path_template = os.path.join(script_path, '../outputs/layers_perf_records/')
     results_root_dir = 'outputs/'
 
     for model_name in model_names:
@@ -198,7 +200,7 @@ def main():
             continue
 
         layer_reprs = []
-        with open('/media/SSD2TB/fareed/wd/my_repos/spotligh/spotlight/inputs/unique_layers/heda_shapes.out', 'r') as f:
+        with open(UNIQUE_LAYERS_DIR, 'r') as f:
             for line in f:
                 layer_reprs.append(line.replace(' ', '').replace('\n', ''))
 

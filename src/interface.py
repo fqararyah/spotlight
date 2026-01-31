@@ -223,7 +223,9 @@ def convert_args_and_invoke(args, eval_func, shape, num_simd_lanes, bit_width, b
         for key in ACCESS_KEYS_DRAM_READ:
             cost['dram_reads'] += cost[key]
         if 'CONV' in shape[0]:
-            cost['dram_writes'] += shape[1]['K'] * (shape[1]['X'] / shape[1]['X']) * (shape[2]['Y'] / shape[2]['Y'])
+            cost['dram_writes'] += shape[1]['K'] * (shape[1]['X']) * (shape[2]['Y'])
+        else:
+            cost['dram_writes'] += shape[1]['K'] * (shape[1]['X'])
         for key in ACCESS_KEYS_L2_READ:
             cost['l2_reads'] += cost[key]
         for key in ACCESS_KEYS_L2_WRITE:
