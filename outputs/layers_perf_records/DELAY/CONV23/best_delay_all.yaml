@@ -1,258 +1,69 @@
-C_256_FH_1_FW_1_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
-- layer_id: 0
-  edp: '3.6639e+12'
-  energy: '2.8831e+07'
-  delay: '1.2708e+05'
-  throughput: '2.6734e+03'
-  area: '5.6639e+07'
-  power: '1.616603e+03'
+C_512_FH_3_FW_3_IH_14_IW_14_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+- edp: '4.7804e+12'
+  energy: '3.2356e+07'
+  delay: '1.4774e+05'
+  throughput: '2.6828e+03'
+  area: '4.2370e+07'
+  power: '1.559338e+03'
   dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '2583552.0'
-  l2_writes: '3033088.0'
-  l1_reads: '3963617280.0'
-  l1_writes: '1323715584.0'
-  num_simd_lane: 7
+  dram_writes: '7168'
+  AbsComputations: '462422016.0'
+  FilterL2BufferRead: '2334720.0'
+  InputL2BufferRead: '200704.0'
+  OutputL2BufferRead: '73728.0'
+  FilterL2BufferWrite: '2359296.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '1016064.0'
+  l2_writes: '3475712.0'
+  FilterL1BufferRead: '1585446912.0'
+  InputL1BufferRead: '1585446912.0'
+  OutputL1BufferRead: '1585446912.0'
+  FilterL1BufferWrite: '2334720.0'
+  InputL1BufferWrite: '200704.0'
+  OutputL1BufferWrite: '1585446912.0'
   l1_buf_size: 917504
-  l2_buf_size: 2031616
-  subclusters:
-  - 2
-  - 69
-- layer_id: 0
-  edp: '3.4634e+12'
-  energy: '2.7341e+07'
-  delay: '1.2667e+05'
-  throughput: '2.6820e+03'
-  area: '5.7996e+07'
-  power: '1.445390e+03'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '2533376.0'
-  l2_writes: '21334016.0'
-  l1_reads: '1019215872.0'
-  l1_writes: '342198272.0'
-  num_simd_lane: 7
-  l1_buf_size: 851968
-  l2_buf_size: 2031616
-  subclusters:
-  - 2
-  - 66
-- layer_id: 0
-  edp: '7.5713e+11'
-  energy: '5.9719e+06'
-  delay: '1.2678e+05'
-  throughput: '4.4662e+02'
-  area: '4.5428e+07'
-  power: '9.527714e+03'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '5632136.0'
-  l2_writes: '68519936.0'
-  l1_reads: '1189085184.0'
-  l1_writes: '401920136.0'
-  num_simd_lane: 7
-  l1_buf_size: 1638400
-  l2_buf_size: 1441792
-  subclusters:
-  - 68
-  - 2
-- layer_id: 0
-  edp: '8.2005e+11'
-  energy: '6.1825e+06'
-  delay: '1.3264e+05'
-  throughput: '4.2689e+02'
-  area: '2.8020e+07'
-  power: '1.434345e+03'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '303104.0'
-  l2_writes: '2557952.0'
-  l1_reads: '169869312.0'
-  l1_writes: '56852480.0'
-  num_simd_lane: 7
-  l1_buf_size: 1179648
-  l2_buf_size: 1703936
-  subclusters:
-  - 69
-  - 2
-- layer_id: 0
-  edp: '4.1196e+12'
-  energy: '2.7793e+07'
-  delay: '1.4822e+05'
-  throughput: '2.2920e+03'
-  area: '6.4639e+07'
-  power: '3.216901e+03'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '2388224.0'
-  l2_writes: '17205248.0'
-  l1_reads: '3397386240.0'
-  l1_writes: '1134776576.0'
-  num_simd_lane: 6
-  l1_buf_size: 1245184
-  l2_buf_size: 65536
-  subclusters:
-  - 2
-  - 83
-- layer_id: 0
-  edp: '1.4436e+12'
-  energy: '5.9701e+06'
-  delay: '2.4180e+05'
-  throughput: '2.3417e+02'
-  area: '3.0645e+07'
-  power: '2.670703e+04'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '2533376.0'
-  l2_writes: '10323968.0'
-  l1_reads: '3397386240.0'
-  l1_writes: '1134921728.0'
-  num_simd_lane: 7
-  l1_buf_size: 1638400
-  l2_buf_size: 2031616
-  subclusters:
-  - 48
-  - 3
-- layer_id: 0
-  edp: '3.4996e+12'
-  energy: '2.7093e+07'
-  delay: '1.2917e+05'
-  throughput: '2.6301e+03'
-  area: '2.7120e+07'
-  power: '8.369086e+03'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '29370368.0'
-  l2_writes: '3262464.0'
-  l1_reads: '1387266048.0'
-  l1_writes: '491718656.0'
-  num_simd_lane: 7
-  l1_buf_size: 655360
-  l2_buf_size: 1245184
+  l2_buf_size: 720896
   subclusters:
   - 2
   - 73
-- layer_id: 0
-  edp: '4.6730e+12'
-  energy: '3.1486e+07'
-  delay: '1.4841e+05'
-  throughput: '2.6707e+03'
-  area: '6.2654e+07'
-  power: '1.410864e+04'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '2616320.0'
-  l2_writes: '2316288.0'
-  l1_reads: '1387266048.0'
-  l1_writes: '464964608.0'
   num_simd_lane: 7
-  l1_buf_size: 983040
-  l2_buf_size: 1507328
-  subclusters:
-  - 2
-  - 69
-- layer_id: 0
-  edp: '8.8102e+11'
-  energy: '6.9544e+06'
-  delay: '1.2668e+05'
-  throughput: '4.4696e+02'
-  area: '4.8817e+07'
-  power: '1.091965e+04'
+  l0_filter_parallelism: 1
+  l0_input_parallelism: 2
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 73
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '8.2193e+11'
+  energy: '6.2616e+06'
+  delay: '1.3126e+05'
+  throughput: '4.3137e+02'
+  area: '2.8269e+07'
+  power: '1.426636e+03'
   dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '27469952.0'
-  l2_writes: '5736448.0'
-  l1_reads: '11324620800.0'
-  l1_writes: '3802269824.0'
-  num_simd_lane: 7
-  l1_buf_size: 458752
-  l2_buf_size: 65536
+  dram_writes: '7168'
+  AbsComputations: '462422016.0'
+  FilterL2BufferRead: '33010176.0'
+  InputL2BufferRead: '154125825.0'
+  OutputL2BufferRead: '73728.0'
+  FilterL2BufferWrite: '2359296.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '308281344.0'
+  l2_writes: '310740992.0'
+  FilterL1BufferRead: '462422016.0'
+  InputL1BufferRead: '462422016.0'
+  OutputL1BufferRead: '462422016.0'
+  FilterL1BufferWrite: '33010176.0'
+  InputL1BufferWrite: '154125825.0'
+  OutputL1BufferWrite: '462422016.0'
+  l1_buf_size: 1507328
+  l2_buf_size: 524288
   subclusters:
-  - 67
+  - 64
   - 2
-- layer_id: 0
-  edp: '4.7010e+12'
-  energy: '3.1486e+07'
-  delay: '1.4930e+05'
-  throughput: '2.6548e+03'
-  area: '2.3017e+07'
-  power: '1.613040e+03'
-  dram_reads: '2459648.0'
-  dram_writes: '512.0'
-  l2_reads: '4817920.0'
-  l2_writes: '3319808.0'
-  l1_reads: '3963617280.0'
-  l1_writes: '1325949952.0'
-  num_simd_lane: 7
-  l1_buf_size: 1835008
-  l2_buf_size: 917504
-  subclusters:
-  - 2
-  - 66
-C_2048_FH_7_FW_7_IH_7_IW_7_NF_2048_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_28_IW_28_NF_32_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_768_IR_16_WR_768_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_56_IW_56_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_64_FH_3_FW_3_IH_56_IW_56_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_7_IW_7_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_IR_16_WR_768_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_128_FH_7_FW_7_IH_56_IW_56_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_768_IR_32_WR_768_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_1024_FH_1_FW_1_IH_14_IW_14_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_1024_FH_1_FW_1_IH_14_IW_14_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_3_FH_3_FW_3_IH_224_IW_224_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_56_IW_56_NF_128_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_1024_FH_7_FW_7_IH_14_IW_14_NF_1024_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_1024_FH_1_FW_1_IH_14_IW_14_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_3_FW_3_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_256_FH_3_FW_3_IH_14_IW_14_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_32_FH_3_FW_3_IH_112_IW_112_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_32_FH_3_FW_3_IH_28_IW_28_NF_32_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_7_IW_7_NF_2048_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_768_IR_16_WR_3072_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_512_FH_3_FW_3_IH_14_IW_14_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_28_IW_28_NF_1024_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_512_FH_7_FW_7_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_28_IW_28_NF_256_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_256_FH_7_FW_7_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_28_IW_28_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_3072_IR_1_WR_768_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_56_IW_56_NF_512_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_28_IW_28_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_3072_IR_16_WR_768_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_14_IW_14_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_3_FW_3_IH_7_IW_7_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_14_IW_14_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_64_FH_3_FW_3_IH_224_IW_224_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_1024_FH_7_FW_7_IH_7_IW_7_NF_1024_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_7_FW_7_IH_14_IW_14_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_1_FW_1_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_1024_FH_1_FW_1_IH_7_IW_7_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_1_FW_1_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_768_IR_16_WR_2304_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_56_IW_56_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_1024_FH_1_FW_1_IH_14_IW_14_NF_512_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_3_FH_7_FW_7_IH_230_IW_230_NF_64_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_2048_FH_1_FW_1_IH_7_IW_7_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_64_FH_3_FW_3_IH_112_IW_112_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_64_FH_1_FW_1_IH_56_IW_56_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_256_FH_3_FW_3_IH_28_IW_28_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_56_IW_56_NF_32_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_1024_FH_1_FW_1_IH_14_IW_14_NF_2048_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_14_IW_14_NF_32_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_32_FH_3_FW_3_IH_112_IW_112_NF_32_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_3_FH_3_FW_3_IH_224_IW_224_NF_32_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1: []
-C_768_IR_1_WR_768_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_256_FH_1_FW_1_IH_14_IW_14_NF_1024_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_7_IW_7_NF_32_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_256_FH_3_FW_3_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_768_IR_1_WR_3072_IR_REDUCTION_1_WR_REDUCTION_1: []
-C_64_FH_1_FW_1_IH_56_IW_56_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_256_FH_3_FW_3_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_512_FH_1_FW_1_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_64_FH_1_FW_1_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_3_FW_3_IH_112_IW_112_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_128_FH_1_FW_1_IH_56_IW_56_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
-C_256_FH_7_FW_7_IH_28_IW_28_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1: []
+  num_simd_lane: 8
+  l0_filter_parallelism: 1
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 2
+  l1_output_parallelism: 1

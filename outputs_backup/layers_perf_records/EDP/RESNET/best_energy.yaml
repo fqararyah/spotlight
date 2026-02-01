@@ -1,0 +1,440 @@
+C_3_FH_7_FW_7_IH_230_IW_230_NF_64_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1:
+  layer_id: 0
+  edp: '1.6136e+13'
+  energy: '1.1549e+07'
+  delay: '1.3972e+06'
+  throughput: '3.2321e+00'
+  area: '8.8994e+07'
+  power: '8.670269e+02'
+  dram_reads: '168108.0'
+  dram_writes: '64.0'
+  l2_reads: '3487528.0'
+  l2_writes: '3165228.0'
+  l1_reads: '1038502080.0'
+  l1_writes: '346443624.0'
+  num_simd_lane: 4
+  l1_buf_size: 1114112
+  l2_buf_size: 1376256
+  subclusters:
+  - 34
+  - 6
+C_64_FH_1_FW_1_IH_56_IW_56_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 1
+  edp: '6.3606e+10'
+  energy: '1.5153e+06'
+  delay: '4.1975e+04'
+  throughput: '3.0602e+02'
+  area: '6.5373e+07'
+  power: '9.816124e+02'
+  dram_reads: '204800.0'
+  dram_writes: '64.0'
+  l2_reads: '405504.0'
+  l2_writes: '23486464.0'
+  l1_reads: '558759936.0'
+  l1_writes: '186458112.0'
+  num_simd_lane: 7
+  l1_buf_size: 1048576
+  l2_buf_size: 131072
+  subclusters:
+  - 16
+  - 9
+C_64_FH_3_FW_3_IH_56_IW_56_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 2
+  edp: '1.6668e+12'
+  energy: '1.0270e+07'
+  delay: '1.6230e+05'
+  throughput: '7.1231e+02'
+  area: '8.9003e+07'
+  power: '1.174353e+03'
+  dram_reads: '237568.0'
+  dram_writes: '64.0'
+  l2_reads: '424192.0'
+  l2_writes: '424192.0'
+  l1_reads: '322486272.0'
+  l1_writes: '107732992.0'
+  num_simd_lane: 4
+  l1_buf_size: 1114112
+  l2_buf_size: 1376256
+  subclusters:
+  - 34
+  - 6
+C_64_FH_1_FW_1_IH_56_IW_56_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 3
+  edp: '2.0603e+12'
+  energy: '5.1415e+06'
+  delay: '4.0071e+05'
+  throughput: '1.2822e+02'
+  area: '5.3610e+07'
+  power: '4.297214e+03'
+  dram_reads: '217088.0'
+  dram_writes: '256.0'
+  l2_reads: '1772544.0'
+  l2_writes: '5234688.0'
+  l1_reads: '963379200.0'
+  l1_writes: '322096128.0'
+  num_simd_lane: 5
+  l1_buf_size: 196608
+  l2_buf_size: 655360
+  subclusters:
+  - 3
+  - 57
+C_256_FH_1_FW_1_IH_56_IW_56_NF_1_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 4
+  edp: '3.7339e+09'
+  energy: '1.0798e+06'
+  delay: '3.4580e+03'
+  throughput: '2.3216e+02'
+  area: '6.2354e+07'
+  power: '5.377752e+02'
+  dram_reads: '803072.0'
+  dram_writes: '1.0'
+  l2_reads: '11649600.0'
+  l2_writes: '1160352.0'
+  l1_reads: '68597760.0'
+  l1_writes: '34512384.0'
+  num_simd_lane: 4
+  l1_buf_size: 65536
+  l2_buf_size: 1310720
+  subclusters:
+  - 48
+  - 4
+C_256_FH_1_FW_1_IH_56_IW_56_NF_64_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 5
+  edp: '2.0506e+12'
+  energy: '1.0355e+07'
+  delay: '1.9802e+05'
+  throughput: '5.0966e+02'
+  area: '6.0525e+07'
+  power: '5.382969e+02'
+  dram_reads: '819200.0'
+  dram_writes: '64.0'
+  l2_reads: '2664960.0'
+  l2_writes: '3973120.0'
+  l1_reads: '302776320.0'
+  l1_writes: '103389696.0'
+  num_simd_lane: 7
+  l1_buf_size: 1048576
+  l2_buf_size: 2031616
+  subclusters:
+  - 10
+  - 14
+C_256_FH_1_FW_1_IH_56_IW_56_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 6
+  edp: '2.0558e+12'
+  energy: '1.0261e+07'
+  delay: '2.0035e+05'
+  throughput: '5.1290e+02'
+  area: '5.9424e+07'
+  power: '6.923084e+02'
+  dram_reads: '835584.0'
+  dram_writes: '128.0'
+  l2_reads: '2011136.0'
+  l2_writes: '68644864.0'
+  l1_reads: '6509690880.0'
+  l1_writes: '2171506688.0'
+  num_simd_lane: 5
+  l1_buf_size: 1572864
+  l2_buf_size: 1507328
+  subclusters:
+  - 157
+  - 1
+C_128_FH_3_FW_3_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 7
+  edp: '3.1174e+12'
+  energy: '1.0018e+07'
+  delay: '3.1118e+05'
+  throughput: '3.4497e+02'
+  area: '6.0698e+07'
+  power: '6.139924e+02'
+  dram_reads: '247808.0'
+  dram_writes: '128.0'
+  l2_reads: '434688.0'
+  l2_writes: '2183168.0'
+  l1_reads: '2229534720.0'
+  l1_writes: '743526400.0'
+  num_simd_lane: 4
+  l1_buf_size: 1048576
+  l2_buf_size: 1179648
+  subclusters:
+  - 3
+  - 45
+C_128_FH_1_FW_1_IH_28_IW_28_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 8
+  edp: '1.6325e+12'
+  energy: '4.3762e+06'
+  delay: '3.7304e+05'
+  throughput: '1.3773e+02'
+  area: '8.5377e+07'
+  power: '1.296369e+03'
+  dram_reads: '165888.0'
+  dram_writes: '512.0'
+  l2_reads: '567296.0'
+  l2_writes: '1599488.0'
+  l1_reads: '550502400.0'
+  l1_writes: '183666688.0'
+  num_simd_lane: 5
+  l1_buf_size: 196608
+  l2_buf_size: 393216
+  subclusters:
+  - 2
+  - 90
+C_512_FH_1_FW_1_IH_28_IW_28_NF_1_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 9
+  edp: '9.3426e+08'
+  energy: '5.4571e+05'
+  delay: '1.7120e+03'
+  throughput: '2.3447e+02'
+  area: '8.5066e+07'
+  power: '6.743835e+02'
+  dram_reads: '401920.0'
+  dram_writes: '1.0'
+  l2_reads: '775440.0'
+  l2_writes: '404836.0'
+  l1_reads: '4478976.0'
+  l1_writes: '2267648.0'
+  num_simd_lane: 5
+  l1_buf_size: 1769472
+  l2_buf_size: 2097152
+  subclusters:
+  - 47
+  - 4
+C_256_FH_1_FW_1_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 10
+  edp: '1.9705e+12'
+  energy: '1.2319e+07'
+  delay: '1.5996e+05'
+  throughput: '1.6060e+02'
+  area: '9.0802e+07'
+  power: '6.400624e+02'
+  dram_reads: '233472.0'
+  dram_writes: '128.0'
+  l2_reads: '1236992.0'
+  l2_writes: '4372992.0'
+  l1_reads: '3179151360.0'
+  l1_writes: '1060853760.0'
+  num_simd_lane: 3
+  l1_buf_size: 327680
+  l2_buf_size: 458752
+  subclusters:
+  - 116
+  - 2
+C_512_FH_1_FW_1_IH_28_IW_28_NF_256_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1:
+  layer_id: 11
+  edp: '2.0636e+11'
+  energy: '2.3039e+06'
+  delay: '8.9570e+04'
+  throughput: '2.4584e+02'
+  area: '6.5687e+07'
+  power: '1.719833e+03'
+  dram_reads: '532480.0'
+  dram_writes: '256.0'
+  l2_reads: '417792.0'
+  l2_writes: '1220608.0'
+  l1_reads: '66060288.0'
+  l1_writes: '22237184.0'
+  num_simd_lane: 2
+  l1_buf_size: 1048576
+  l2_buf_size: 1245184
+  subclusters:
+  - 76
+  - 2
+C_256_FH_3_FW_3_IH_14_IW_14_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 12
+  edp: '4.7182e+12'
+  energy: '1.0863e+07'
+  delay: '4.3433e+05'
+  throughput: '2.2815e+02'
+  area: '3.6190e+07'
+  power: '2.469406e+02'
+  dram_reads: '640000.0'
+  dram_writes: '256.0'
+  l2_reads: '750784.0'
+  l2_writes: '2704384.0'
+  l1_reads: '297271296.0'
+  l1_writes: '99804352.0'
+  num_simd_lane: 2
+  l1_buf_size: 2031616
+  l2_buf_size: 1638400
+  subclusters:
+  - 20
+  - 9
+C_256_FH_1_FW_1_IH_14_IW_14_NF_1024_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 13
+  edp: '2.4824e+11'
+  energy: '4.2741e+06'
+  delay: '5.8081e+04'
+  throughput: '8.8463e+02'
+  area: '6.5434e+07'
+  power: '2.993984e+03'
+  dram_reads: '312320.0'
+  dram_writes: '1024.0'
+  l2_reads: '9618176.0'
+  l2_writes: '48022528.0'
+  l1_reads: '1145044992.0'
+  l1_writes: '391099136.0'
+  num_simd_lane: 7
+  l1_buf_size: 1048576
+  l2_buf_size: 131072
+  subclusters:
+  - 16
+  - 9
+C_1024_FH_1_FW_1_IH_14_IW_14_NF_1_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 14
+  edp: '2.4938e+08'
+  energy: '2.7225e+05'
+  delay: '9.1600e+02'
+  throughput: '2.1911e+02'
+  area: '5.5351e+07'
+  power: '4.663139e+02'
+  dram_reads: '201728.0'
+  dram_writes: '1.0'
+  l2_reads: '386052.0'
+  l2_writes: '244992.0'
+  l1_reads: '2076672.0'
+  l1_writes: '1078080.0'
+  num_simd_lane: 5
+  l1_buf_size: 851968
+  l2_buf_size: 1769472
+  subclusters:
+  - 56
+  - 3
+C_1024_FH_1_FW_1_IH_14_IW_14_NF_256_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 15
+  edp: '2.8874e+11'
+  energy: '4.2828e+06'
+  delay: '6.7418e+04'
+  throughput: '7.6211e+02'
+  area: '6.5522e+07'
+  power: '5.918700e+03'
+  dram_reads: '462848.0'
+  dram_writes: '256.0'
+  l2_reads: '3266048.0'
+  l2_writes: '663552.0'
+  l1_reads: '154140672.0'
+  l1_writes: '54596096.0'
+  num_simd_lane: 7
+  l1_buf_size: 1048576
+  l2_buf_size: 131072
+  subclusters:
+  - 16
+  - 9
+C_1024_FH_1_FW_1_IH_14_IW_14_NF_512_IW_REDUCTION_2_IH_REDUCTION_2_NF_REDUCTION_1:
+  layer_id: 16
+  edp: '6.7321e+10'
+  energy: '2.6587e+06'
+  delay: '2.5321e+04'
+  throughput: '8.6964e+02'
+  area: '5.7604e+07'
+  power: '1.707152e+03'
+  dram_reads: '724992.0'
+  dram_writes: '512.0'
+  l2_reads: '1746944.0'
+  l2_writes: '882688.0'
+  l1_reads: '242221056.0'
+  l1_writes: '82386944.0'
+  num_simd_lane: 7
+  l1_buf_size: 983040
+  l2_buf_size: 196608
+  subclusters:
+  - 22
+  - 6
+C_512_FH_3_FW_3_IH_7_IW_7_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 17
+  edp: '2.4559e+11'
+  energy: '2.6638e+06'
+  delay: '9.2196e+04'
+  throughput: '1.2795e+02'
+  area: '6.6151e+07'
+  power: '1.710772e+04'
+  dram_reads: '2384384.0'
+  dram_writes: '512.0'
+  l2_reads: '2397184.0'
+  l2_writes: '2491904.0'
+  l1_reads: '247726080.0'
+  l1_writes: '84959744.0'
+  num_simd_lane: 2
+  l1_buf_size: 1048576
+  l2_buf_size: 1245184
+  subclusters:
+  - 76
+  - 2
+C_512_FH_1_FW_1_IH_7_IW_7_NF_2048_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 18
+  edp: '3.1165e+11'
+  energy: '5.3890e+06'
+  delay: '5.7830e+04'
+  throughput: '8.8847e+02'
+  area: '5.6030e+07'
+  power: '1.725390e+03'
+  dram_reads: '1073664.0'
+  dram_writes: '2048.0'
+  l2_reads: '1195520.0'
+  l2_writes: '1876480.0'
+  l1_reads: '154140672.0'
+  l1_writes: '52475392.0'
+  num_simd_lane: 7
+  l1_buf_size: 1966080
+  l2_buf_size: 65536
+  subclusters:
+  - 2
+  - 72
+C_2048_FH_1_FW_1_IH_7_IW_7_NF_1_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 19
+  edp: '7.4833e+07'
+  energy: '1.4308e+05'
+  delay: '5.2300e+02'
+  throughput: '1.9188e+02'
+  area: '8.8990e+07'
+  power: '7.442552e+02'
+  dram_reads: '102400.0'
+  dram_writes: '1.0'
+  l2_reads: '102449.0'
+  l2_writes: '114944.0'
+  l1_reads: '301056.0'
+  l1_writes: '202752.0'
+  num_simd_lane: 4
+  l1_buf_size: 1114112
+  l2_buf_size: 1376256
+  subclusters:
+  - 34
+  - 6
+C_2048_FH_1_FW_1_IH_7_IW_7_NF_512_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 20
+  edp: '8.8400e+11'
+  energy: '5.3720e+06'
+  delay: '1.6456e+05'
+  throughput: '3.1223e+02'
+  area: '7.0208e+07'
+  power: '2.789987e+03'
+  dram_reads: '1148928.0'
+  dram_writes: '512.0'
+  l2_reads: '3840512.0'
+  l2_writes: '2578944.0'
+  l1_reads: '154140672.0'
+  l1_writes: '55195648.0'
+  num_simd_lane: 2
+  l1_buf_size: 1900544
+  l2_buf_size: 1835008
+  subclusters:
+  - 20
+  - 9
+C_2048_FH_7_FW_7_IH_7_IW_7_NF_1000_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 21
+  edp: '1.0619e+14'
+  energy: '1.3791e+08'
+  delay: '7.7001e+05'
+  throughput: '1.3033e+02'
+  area: '6.8515e+07'
+  power: '1.052125e+05'
+  dram_reads: '100452352.0'
+  dram_writes: '0'
+  l2_reads: '100496920.0'
+  l2_writes: '101348352.0'
+  l1_reads: '2107392000.0'
+  l1_writes: '802959920.0'
+  num_simd_lane: 7
+  l1_buf_size: 1048576
+  l2_buf_size: 131072
+  subclusters:
+  - 16
+  - 9

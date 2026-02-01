@@ -1,0 +1,20 @@
+C_256_FH_1_FW_1_IH_28_IW_28_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
+  layer_id: 0
+  edp: '9.7440e+11'
+  energy: '1.0092e+07'
+  delay: '9.6556e+04'
+  throughput: '9.1222e+02'
+  area: '2.6128e+07'
+  power: '7.611056e+03'
+  dram_reads: '2297856.0'
+  dram_writes: '2048.0'
+  l2_reads: '2548736.0'
+  l2_writes: '3903488.0'
+  l1_reads: '308281344.0'
+  l1_writes: '104907776.0'
+  num_simd_lane: 8
+  l1_buf_size: 1638400
+  l2_buf_size: 720896
+  subclusters:
+  - 64
+  - 2

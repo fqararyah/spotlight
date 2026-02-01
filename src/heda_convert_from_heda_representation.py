@@ -17,8 +17,8 @@ CONV_MAP_INV = {
 }
 
 MATMUL_MAP_INV = {
-    "IR": "K",
-    "WR": "X",
+    "IR": "X",
+    "WR": "K",
     "C": "Y", 
 }
 
@@ -77,8 +77,8 @@ def convert_line(line, counter):
     else:
         # MatMul naming and logic
         op_name = f"MatMul{counter:02d}"
-        dims['K'] = parsed_data.get('IR', 1)
-        dims['X'] = parsed_data.get('WR', 1)
+        dims[MATMUL_MAP_INV['IR']] = parsed_data.get('IR', 1)
+        dims[MATMUL_MAP_INV['WR']] = parsed_data.get('WR', 1)
         dims['Y'] = parsed_data.get('C', 1)
         dims['R'] = parsed_data.get('C', 1)
         op_type = "MatMul"
