@@ -1,35 +1,35 @@
 C_128_FH_7_FW_7_IH_56_IW_56_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
-  edp: 12748000000000.0
-  energy: '2.3933e+07'
-  delay: '4.7705e+05'
-  throughput: '6.7316e+02'
-  area: '2.8024e+07'
-  power: '4.589627e+03'
+  edp: 10953593000000.0
+  energy: '2.0677e+05'
+  delay: '1.1164e+06'
+  throughput: '8.0539e+01'
+  area: '3.7808e+07'
+  power: '4.188027e+02'
   dram_reads: '1204224.0'
-  dram_writes: '7168'
+  dram_writes: '401408.0'
   AbsComputations: '2517630976.0'
-  FilterL2BufferRead: '20070400.0'
-  InputL2BufferRead: '1806336.0'
+  FilterL2BufferRead: '802816.0'
+  InputL2BufferRead: '17110016.0'
   OutputL2BufferRead: '320000.0'
   FilterL2BufferWrite: '802816.0'
   InputL2BufferWrite: '401408.0'
-  OutputL2BufferWrite: '472908800.0'
-  l2_writes: '474113024.0'
-  FilterL1BufferRead: '32594329600.0'
-  InputL1BufferRead: '32594329600.0'
-  OutputL1BufferRead: '32594329600.0'
-  FilterL1BufferWrite: '20070400.0'
-  InputL1BufferWrite: '1806336.0'
-  OutputL1BufferWrite: '32594329600.0'
-  l1_buf_size: 655360
-  l2_buf_size: 720896
+  OutputL2BufferWrite: '28092416.0'
+  l2_writes: '29296640.0'
+  FilterL1BufferRead: '176195633152.0'
+  InputL1BufferRead: '176195633152.0'
+  OutputL1BufferRead: '176195633152.0'
+  FilterL1BufferWrite: '802816.0'
+  InputL1BufferWrite: '17110016.0'
+  OutputL1BufferWrite: '176195633152.0'
+  l1_buf_size: 1769472
+  l2_buf_size: 1048576
   subclusters:
-  - 14
-  - 10
+  - 15
+  - 9
   num_simd_lane: 7
   l0_filter_parallelism: 1
-  l0_input_parallelism: 14
+  l0_input_parallelism: 1
   l0_output_parallelism: 1
   l1_filter_parallelism: 1
-  l1_input_parallelism: 10
+  l1_input_parallelism: 9
   l1_output_parallelism: 1

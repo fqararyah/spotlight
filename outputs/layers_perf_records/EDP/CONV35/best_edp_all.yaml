@@ -1,28 +1,28 @@
 C_512_FH_1_FW_1_IH_14_IW_14_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
-- edp: '1.6082e+10'
+- edp: '1.5395e+10'
   energy: '1.1988e+06'
-  delay: '1.3415e+04'
-  throughput: '9.5751e+02'
-  area: '2.2448e+07'
-  power: '1.335858e+03'
+  delay: '1.2842e+04'
+  throughput: '1.0002e+03'
+  area: '4.6091e+07'
+  power: '7.883497e+02'
   dram_reads: '165888.0'
-  dram_writes: '1792'
+  dram_writes: '25088.0'
   AbsComputations: '12845056.0'
-  FilterL2BufferRead: '65536.0'
+  FilterL2BufferRead: '49408.0'
   InputL2BufferRead: '100352.0'
   OutputL2BufferRead: '25088.0'
   FilterL2BufferWrite: '65536.0'
   InputL2BufferWrite: '100352.0'
-  OutputL2BufferWrite: '25088.0'
-  l2_writes: '190976.0'
-  FilterL1BufferRead: '12845056.0'
-  InputL1BufferRead: '12845056.0'
-  OutputL1BufferRead: '12845056.0'
-  FilterL1BufferWrite: '65536.0'
+  OutputL2BufferWrite: '2236416.0'
+  l2_writes: '2402304.0'
+  FilterL1BufferRead: '23855104.0'
+  InputL1BufferRead: '23855104.0'
+  OutputL1BufferRead: '23855104.0'
+  FilterL1BufferWrite: '49408.0'
   InputL1BufferWrite: '100352.0'
-  OutputL1BufferWrite: '12845056.0'
-  l1_buf_size: 1835008
-  l2_buf_size: 1966080
+  OutputL1BufferWrite: '23855104.0'
+  l1_buf_size: 983040
+  l2_buf_size: 1310720
   subclusters:
   - 2
   - 64
@@ -33,35 +33,307 @@ C_512_FH_1_FW_1_IH_14_IW_14_NF_128_IW_REDUCTION_1_IH_REDUCTION_1_NF_REDUCTION_1:
   l1_filter_parallelism: 1
   l1_input_parallelism: 1
   l1_output_parallelism: 1
-- edp: '1.5464e+10'
+- edp: '1.5215e+10'
   energy: '1.1777e+06'
-  delay: '1.3131e+04'
-  throughput: '9.7822e+02'
-  area: '4.8641e+07'
-  power: '1.725371e+03'
+  delay: '1.2919e+04'
+  throughput: '9.9428e+02'
+  area: '4.9394e+07'
+  power: '9.772167e+02'
   dram_reads: '165888.0'
-  dram_writes: '1792'
+  dram_writes: '25088.0'
   AbsComputations: '12845056.0'
-  FilterL2BufferRead: '65536.0'
-  InputL2BufferRead: '100352.0'
+  FilterL2BufferRead: '655360.0'
+  InputL2BufferRead: '465920.0'
   OutputL2BufferRead: '25088.0'
   FilterL2BufferWrite: '65536.0'
   InputL2BufferWrite: '100352.0'
-  OutputL2BufferWrite: '50176.0'
-  l2_writes: '216064.0'
-  FilterL1BufferRead: '12845056.0'
-  InputL1BufferRead: '12845056.0'
-  OutputL1BufferRead: '12845056.0'
-  FilterL1BufferWrite: '65536.0'
-  InputL1BufferWrite: '100352.0'
-  OutputL1BufferWrite: '12845056.0'
-  l1_buf_size: 1310720
-  l2_buf_size: 2097152
+  OutputL2BufferWrite: '186368.0'
+  l2_writes: '352256.0'
+  FilterL1BufferRead: '95420416.0'
+  InputL1BufferRead: '95420416.0'
+  OutputL1BufferRead: '95420416.0'
+  FilterL1BufferWrite: '655360.0'
+  InputL1BufferWrite: '465920.0'
+  OutputL1BufferWrite: '95420416.0'
+  l1_buf_size: 393216
+  l2_buf_size: 1376256
   subclusters:
   - 8
   - 16
   num_simd_lane: 8
   l0_filter_parallelism: 8
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5563e+10'
+  energy: '1.1777e+06'
+  delay: '1.3215e+04'
+  throughput: '9.7201e+02'
+  area: '4.3390e+07'
+  power: '1.247467e+03'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '655360.0'
+  InputL2BufferRead: '665600.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '5537792.0'
+  l2_writes: '5703680.0'
+  FilterL1BufferRead: '44302336.0'
+  InputL1BufferRead: '44302336.0'
+  OutputL1BufferRead: '44302336.0'
+  FilterL1BufferWrite: '655360.0'
+  InputL1BufferWrite: '665600.0'
+  OutputL1BufferWrite: '44302336.0'
+  l1_buf_size: 131072
+  l2_buf_size: 65536
+  subclusters:
+  - 64
+  - 2
+  num_simd_lane: 8
+  l0_filter_parallelism: 1
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5265e+10'
+  energy: '1.1777e+06'
+  delay: '1.2962e+04'
+  throughput: '9.9098e+02'
+  area: '4.3575e+07'
+  power: '9.553279e+02'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '495616.0'
+  InputL2BufferRead: '100352.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '802816.0'
+  l2_writes: '968704.0'
+  FilterL1BufferRead: '51380224.0'
+  InputL1BufferRead: '51380224.0'
+  OutputL1BufferRead: '51380224.0'
+  FilterL1BufferWrite: '495616.0'
+  InputL1BufferWrite: '100352.0'
+  OutputL1BufferWrite: '51380224.0'
+  l1_buf_size: 196608
+  l2_buf_size: 393216
+  subclusters:
+  - 2
+  - 64
+  num_simd_lane: 8
+  l0_filter_parallelism: 2
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5403e+10'
+  energy: '1.1777e+06'
+  delay: '1.3079e+04'
+  throughput: '9.8211e+02'
+  area: '5.5225e+07'
+  power: '1.418625e+03'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '65536.0'
+  InputL2BufferRead: '5632256.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '200704.0'
+  l2_writes: '366592.0'
+  FilterL1BufferRead: '12845056.0'
+  InputL1BufferRead: '12845056.0'
+  OutputL1BufferRead: '12845056.0'
+  FilterL1BufferWrite: '65536.0'
+  InputL1BufferWrite: '5632256.0'
+  OutputL1BufferWrite: '12845056.0'
+  l1_buf_size: 1507328
+  l2_buf_size: 524288
+  subclusters:
+  - 128
+  - 1
+  num_simd_lane: 8
+  l0_filter_parallelism: 1
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5243e+10'
+  energy: '1.1777e+06'
+  delay: '1.2943e+04'
+  throughput: '9.9243e+02'
+  area: '4.5321e+07'
+  power: '9.584501e+02'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '65536.0'
+  InputL2BufferRead: '3195392.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '25088.0'
+  l2_writes: '190976.0'
+  FilterL1BufferRead: '12845056.0'
+  InputL1BufferRead: '12845056.0'
+  OutputL1BufferRead: '12845056.0'
+  FilterL1BufferWrite: '65536.0'
+  InputL1BufferWrite: '3195392.0'
+  OutputL1BufferWrite: '12845056.0'
+  l1_buf_size: 1245184
+  l2_buf_size: 1114112
+  subclusters:
+  - 2
+  - 64
+  num_simd_lane: 8
+  l0_filter_parallelism: 2
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5855e+10'
+  energy: '1.2411e+06'
+  delay: '1.2775e+04'
+  throughput: '1.0055e+03'
+  area: '4.1252e+07'
+  power: '1.094243e+03'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '864256.0'
+  InputL2BufferRead: '100352.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '745472.0'
+  l2_writes: '911360.0'
+  FilterL1BufferRead: '23855104.0'
+  InputL1BufferRead: '23855104.0'
+  OutputL1BufferRead: '23855104.0'
+  FilterL1BufferWrite: '864256.0'
+  InputL1BufferWrite: '100352.0'
+  OutputL1BufferWrite: '23855104.0'
+  l1_buf_size: 1507328
+  l2_buf_size: 1048576
+  subclusters:
+  - 64
+  - 2
+  num_simd_lane: 8
+  l0_filter_parallelism: 64
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 2
+  l1_output_parallelism: 1
+- edp: '1.5739e+10'
+  energy: '1.2411e+06'
+  delay: '1.2682e+04'
+  throughput: '1.0129e+03'
+  area: '1.1984e+08'
+  power: '9.976929e+02'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '65536.0'
+  InputL2BufferRead: '2988560.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '802816.0'
+  l2_writes: '968704.0'
+  FilterL1BufferRead: '12845056.0'
+  InputL1BufferRead: '12845056.0'
+  OutputL1BufferRead: '12845056.0'
+  FilterL1BufferWrite: '65536.0'
+  InputL1BufferWrite: '2988560.0'
+  OutputL1BufferWrite: '12845056.0'
+  l1_buf_size: 1245184
+  l2_buf_size: 1441792
+  subclusters:
+  - 16
+  - 16
+  num_simd_lane: 4
+  l0_filter_parallelism: 16
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5734e+10'
+  energy: '1.2411e+06'
+  delay: '1.2678e+04'
+  throughput: '1.0132e+03'
+  area: '5.4037e+07'
+  power: '6.013504e+02'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '65536.0'
+  InputL2BufferRead: '333824.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '46592.0'
+  l2_writes: '212480.0'
+  FilterL1BufferRead: '23855104.0'
+  InputL1BufferRead: '23855104.0'
+  OutputL1BufferRead: '23855104.0'
+  FilterL1BufferWrite: '65536.0'
+  InputL1BufferWrite: '333824.0'
+  OutputL1BufferWrite: '23855104.0'
+  l1_buf_size: 1179648
+  l2_buf_size: 1048576
+  subclusters:
+  - 8
+  - 16
+  num_simd_lane: 8
+  l0_filter_parallelism: 8
+  l0_input_parallelism: 1
+  l0_output_parallelism: 1
+  l1_filter_parallelism: 1
+  l1_input_parallelism: 1
+  l1_output_parallelism: 1
+- edp: '1.5354e+10'
+  energy: '1.1777e+06'
+  delay: '1.3037e+04'
+  throughput: '9.8528e+02'
+  area: '5.1913e+07'
+  power: '8.945840e+02'
+  dram_reads: '165888.0'
+  dram_writes: '25088.0'
+  AbsComputations: '12845056.0'
+  FilterL2BufferRead: '704512.0'
+  InputL2BufferRead: '86272.0'
+  OutputL2BufferRead: '25088.0'
+  FilterL2BufferWrite: '65536.0'
+  InputL2BufferWrite: '100352.0'
+  OutputL2BufferWrite: '100352.0'
+  l2_writes: '266240.0'
+  FilterL1BufferRead: '12845056.0'
+  InputL1BufferRead: '12845056.0'
+  OutputL1BufferRead: '12845056.0'
+  FilterL1BufferWrite: '704512.0'
+  InputL1BufferWrite: '86272.0'
+  OutputL1BufferWrite: '12845056.0'
+  l1_buf_size: 524288
+  l2_buf_size: 1966080
+  subclusters:
+  - 16
+  - 8
+  num_simd_lane: 8
+  l0_filter_parallelism: 16
   l0_input_parallelism: 1
   l0_output_parallelism: 1
   l1_filter_parallelism: 1
